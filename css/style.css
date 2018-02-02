@@ -1,0 +1,13 @@
+/* Your custom styles */
+
+.form-inline{
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 4px 6px 4px 6px;
+    position: relative;
+}
+
+.navbar.navbar-dark form input[type="text"]{
+    border-style: none;
+}
+
+
