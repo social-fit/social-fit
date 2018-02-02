@@ -10,4 +10,24 @@
     border-style: none;
 }
 
+.side-link {
+    color: rgba(0,0,0,0.87);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 50px;
+    padding: 2px;
+}
+
+.bg-light {
+    background-color: #f1f1f1;
+}
+
+.sidebar-sticky {
+    position: sticky;
+    top: 48px;
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
 
