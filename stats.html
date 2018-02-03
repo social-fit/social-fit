@@ -106,13 +106,13 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="side-link nav-link">
+                                <a href="stats.html" class="side-link nav-link">
                                     <i class="fas fa-signal fa-lg fa-fw"></i>
                                     <span class="mx-md-2">Estatísticas</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="side-link nav-link">
+                                <a href="personal-records.html" class="side-link nav-link">
                                     <i class="fas fa-child fa-lg fa-fw"></i>
                                     <span class="mx-md-2">Personal Records</span>
                                 </a>
@@ -218,32 +218,56 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
     <script>
-        var ctx = document.getElementById('elench-press-graph').getContext('2d');
-        var chart = new Chart(ctx, {
-            // The type of chart we want to create
-            type: 'line',
+        var ctx1 = document.getElementById('elench-press-graph').getContext('2d');
+        let data_elench_press = [], dia_elench_press = [];
 
-            // The data for our dataset
-            data: {
-                labels: ["27/01/2018", "28/01/2018", "29/01/2018", "30/01/2018", "31/01/2018", "01/02/2018", "02/02/2018"],
-                datasets: [{
-                    label: "Elench Press - Últimos 7 dias",
-                    backgroundColor: 'rgba(229, 57, 53, 0.2)',
-                    borderColor: 'rgb(229, 57, 53)',
-                    borderWidth: 2,
-                    data: [4, 10, 5, 2, 20, 30, 45],
-                }]
-            },
+        $.ajax({
+            url: "php/updatePR.php",
+            data: {},
+            success: function (data) {
+                data = JSON.parse(data)
+                for ([key, value] of Object.entries(data)) {
+                    data_elench_press.push(value)
+                    dia_elench_press.push(key)
+                }
 
-            // Configuration options go here
-            options: {
-                responsive: true,
-                //maintainAspectRatio: false,
+                let dados = {
+                    labels: dia_elench_press,
+                        datasets: [{
+                            label: "Elench Press - Últimos 7 dias",
+                            backgroundColor: 'rgba(229, 57, 53, 0.2)',
+                            borderColor: 'rgb(229, 57, 53)',
+                            borderWidth: 2,
+                            data: data_elench_press,
+                        }]
+                }
+
+                createChartElenchPress(dados)
             }
-        });
+        })
 
-        var ctx = document.getElementById('clean-power-graph').getContext('2d');
-        var chart = new Chart(ctx, {
+        console.log(data_elench_press)
+        console.log(dia_elench_press)
+
+        function createChartElenchPress (dados) {
+            var chart = new Chart(ctx1, {
+                // The type of chart we want to create
+                type: 'bar',
+
+                // The data for our dataset
+                data: dados,
+
+                // Configuration options go here
+                options: {
+                    responsive: true,
+                    //maintainAspectRatio: false,
+                }
+            });
+        }
+
+        var ctx2 = document.getElementById('clean-power-graph').getContext('2d');
+
+        var chart = new Chart(ctx2, {
             // The type of chart we want to create
             type: 'bar',
 
@@ -255,7 +279,7 @@
                     backgroundColor: 'rgba(229, 57, 53, 0.2)',
                     borderColor: 'rgb(229, 57, 53)',
                     borderWidth: 2,
-                    data: [2, 20, 30, 45, 4, 10, 5],
+                    data: [4, 10, 5, 2, 20, 30, 45],
                 }]
             },
 

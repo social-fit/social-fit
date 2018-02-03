@@ -108,13 +108,13 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="side-link nav-link">
+                                <a href="stats.html" class="side-link nav-link">
                                     <i class="fas fa-signal fa-lg fa-fw"></i>
                                     <span class="mx-md-2">Estatísticas</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="side-link nav-link">
+                                <a href="personal-records.html" class="side-link nav-link">
                                     <i class="fas fa-child fa-lg fa-fw"></i>
                                     <span class="mx-md-2">Personal Records</span>
                                 </a>
@@ -162,57 +162,61 @@
                 
                 <div class="col-md-10">
                     <h1 class="mt-4">Personal Records</h1>
-                    <form>
+                    <form action="php/getPR.php" method="GET">
                         <div class="row mt-4">
                             <div class="col-12 col-sm-6 col-md-4 form-group">
                                 <label for="elench-press">Elench Press</label>
-                                <input type="text" class="form-control" id="elench-press" placeholder="205">
+                                <input type="text" name="elench_press" class="form-control" id="elench-press" placeholder="205">
                             </div>
                             <div class="col-12 col-sm-6 col-md-4 form-group">
                                 <label for="clean-power">Clean (Power)</label>
-                                <input type="text" class="form-control" id="clean-power" placeholder="175">
+                                <input type="text" name="clean_power" class="form-control" id="clean-power" placeholder="175">
                             </div>
                             <div class="col-12 col-sm-6 col-md-4 form-group">
                                 <label for="clean-squat">Clean (Squat)</label>
-                                <input type="text" class="form-control" id="clean-squat" placeholder="195">
+                                <input type="text" name="clean_squat" class="form-control" id="clean-squat" placeholder="195">
                             </div>
                             <div class="col-12 col-sm-6 col-md-4 form-group">
                                 <label for="clean-jerk">Clean + Jerk</label>
-                                <input type="text" class="form-control" id="clean-jerk" placeholder="165">
+                                <input type="text" name="clean_jerk" class="form-control" id="clean-jerk" placeholder="165">
                             </div>
                     
                             <div class="col-12 col-sm-6 col-md-4 form-group">
                                 <label for="press-push">Press (Push)</label>
-                                <input type="text" class="form-control" id="press-push" placeholder="145">
+                                <input type="text" name="press_push" class="form-control" id="press-push" placeholder="145">
                             </div>
                             <div class="col-12 col-sm-6 col-md-4 form-group">
                                 <label for="press-shoulder">Press (Shoulder)</label>
-                                <input type="text" class="form-control" id="press-shoulder" placeholder="140">
+                                <input type="text" name="press_shoulder" class="form-control" id="press-shoulder" placeholder="140">
                             </div>
                             <div class="col-12 col-sm-6 col-md-4 form-group">
                                 <label for="elench-press">Elench Press</label>
-                                <input type="text" class="form-control" id="elench-press" placeholder="205">
+                                <input type="text" name="" class="form-control" id="elench-press" placeholder="205">
                             </div>
                             <div class="col-12 col-sm-6 col-md-4 form-group">
                                 <label for="clean-power">Clean (Power)</label>
-                                <input type="text" class="form-control" id="clean-power" placeholder="175">
+                                <input type="text" name="" class="form-control" id="clean-power" placeholder="175">
                             </div>
                             <div class="col-12 col-sm-6 col-md-4 form-group">
                                 <label for="clean-squat">Clean (Squat)</label>
-                                <input type="text" class="form-control" id="clean-squat" placeholder="195">
+                                <input type="text" name="" class="form-control" id="clean-squat" placeholder="195">
                             </div>
                             <div class="col-12 col-sm-6 col-md-4 form-group">
                                 <label for="clean-jerk">Clean + Jerk</label>
-                                <input type="text" class="form-control" id="clean-jerk" placeholder="165">
+                                <input type="text" name="" class="form-control" id="clean-jerk" placeholder="165">
                             </div>
                     
                             <div class="col-12 col-sm-6 col-md-4 form-group">
                                 <label for="press-push">Press (Push)</label>
-                                <input type="text" class="form-control" id="press-push" placeholder="145">
+                                <input type="text" name="" class="form-control" id="press-push" placeholder="145">
                             </div>
                             <div class="col-12 col-sm-6 col-md-4 form-group">
                                 <label for="press-shoulder">Press (Shoulder)</label>
-                                <input type="text" class="form-control" id="press-shoulder" placeholder="140">
+                                <input type="text" name="" class="form-control" id="press-shoulder" placeholder="140">
+                            </div>
+
+                            <div class="d-block mx-auto">
+                                <input class="btn btn-danger" type="submit"></input>
                             </div>
                         </div>
                     </form>
