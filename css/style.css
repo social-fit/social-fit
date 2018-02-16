@@ -40,3 +40,14 @@
     overflow-y: auto;
 }
 
+#card-login {
+    width: 35%;
+    height: 75vh;
+    margin: 12.5vh auto;
+    display: block;
+}
+
+.bg-login {
+    background-color: #E53935 !important;
+}
+
