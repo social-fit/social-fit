@@ -40,6 +40,14 @@
     overflow-y: auto;
 }
 
+a{
+    color: #E53935;
+}
+
+label{
+     color: #E53935;
+}
+
 #card-login {
     width: 35%;
     height: 75vh;

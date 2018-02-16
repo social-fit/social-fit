@@ -21,20 +21,43 @@
 
     <!--Main layout-->
     <main>
-        <div class="card" id="card-login">
+
+
+
+        <div class="card mx-auto mt-5" style="width: 35%;">
+
             <div class="card-body">
-                <h2 class="text-center mt-4 font-weight-bold">SocialFiT</h2>
-                <form class="mt-5 mx-2" action="auth.php" method="post">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">E-mail</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail">
+                <form>
+                    <div class="text-center">
+                        <a href="#">
+                            <img class="figure-img rounded" src="img/logo/logo-full.png" height="30" alt="">
+                        </a>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Senha</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+                    <p class="h5 text-left mt-4 mb-2">Login</p>
+                    <p class="h6 text-left mt-1 mb-4">Acesso ao SocialFit</p>
+
+                
+                    <div class="md-form">
+                        <i class="fa fa-envelope prefix grey-text"></i>
+                        <input type="text" name="email" id="defaultForm-email" class="form-control">
+                        <label for="defaultForm-email">E-mail</label>
                     </div>
-        
-                    <button type="submit" class="btn btn-primary mt-5 d-block mx-auto">Entrar</button>
+                
+                    <div class="md-form">
+                        <i class="fa fa-lock prefix grey-text"></i>
+                        <input type="password" name="senha" id="defaultForm-pass" class="form-control">
+                        <label for="defaultForm-pass">Senha</label>
+                    </div>
+
+                    <div class="text-center my-4">
+                        <a href="#">Esqueceu o e-mail ou a senha?</a>
+                    </div>
+                    
+
+                    <div class="text-center">
+                        <button type="submit" class="btn #e53935 red darken-1">Entrar</button>
+                        <button type="submit" class="btn #e53935 red darken-1">Cadastrar</button>
+                    </div>
                 </form>
             </div>
         </div>
