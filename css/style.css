@@ -40,6 +40,11 @@
     overflow-y: auto;
 }
 
+.logo{
+    max-width: 40%;
+    height: auto;
+}
+
 a{
     color: #E53935;
 }
