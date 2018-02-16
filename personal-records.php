@@ -1,3 +1,15 @@
+<?php
+    require_once "php/database.php";
+    session_start();
+
+    $id = $_SESSION['id'];
+    $nome = $_SESSION['nome'];
+
+    if (!isset($id)) {
+        header('Location: login.html');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -79,7 +91,7 @@
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">Action</a>
                         <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="php/logout.php">Sair</a>
                     </div>
                 </li>
 

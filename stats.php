@@ -89,7 +89,7 @@
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">Action</a>
                         <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="php/logout.php">Sair</a>
                     </div>
                 </li>
             
@@ -333,48 +333,46 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
     <script>
-        var ctx1 = document.getElementById('burpee-graph').getContext('2d');
-        var ctx2 = document.getElementById('air-squat-graph').getContext('2d');
-        var ctx3 = document.getElementById('front-squat-graph').getContext('2d');
-        var ctx4 = document.getElementById('back-squat-graph').getContext('2d');
-        var ctx5 = document.getElementById('overhead-squat-graph').getContext('2d');
-        var ctx6 = document.getElementById('shoulder-press-graph').getContext('2d');
-        var ctx7 = document.getElementById('push-press-graph').getContext('2d');
-        var ctx8 = document.getElementById('push-jerk-graph').getContext('2d');
-        var ctx9 = document.getElementById('deadlift-graph').getContext('2d');
-        var ctx10 = document.getElementById('pull-up-graph').getContext('2d');
-
-        let data_burpee = [], dia_burpee = [];
 
         $.ajax({
             method: "POST",
-            data: { 1: 'burpee', 2: 'air-squat', 3: 'front-squat', 4: 'back-squat', 5: 'overhead-squat', 6: 'shoulder-press', 7: 'push-press', 8: 'push-jerk', 9: 'deadlift', 10: 'pull-up' },
+            data: {'id': "<?php echo $id ?>"}, 
             url: "php/updatePR.php",
             success: function (data) {
-                console.log(data)
+                //console.log(data)
                 data = JSON.parse(data)
+                
+                let cont = 0
+                let labels = ["Burpee", "Air Squat", "Front Squat", "Back Squat", "Overhead Squat", "Shoulder Press", "Push Press", "Push Jerk", "Deadlift", "Pull Up"]
+                let contexto = ['burpee-graph', 'air-squat-graph', 'front-squat-graph', 'back-squat-graph', 'overhead-squat-graph', 'shoulder-press-graph', 'push-press-graph', 'push-jerk-graph', 'deadlift-graph', 'pull-up-graph']
+
                 for ([key, value] of Object.entries(data)) {
-                    data_burpee.push(value)
-                    dia_burpee.push(key)
-                }
+                    let valor = [], dia = [];
 
-                let dados = {
-                    labels: dia_burpee,
-                        datasets: [{
-                            label: "Burpee - Últimos 7 dias",
-                            backgroundColor: 'rgba(229, 57, 53, 0.2)',
-                            borderColor: 'rgb(229, 57, 53)',
-                            borderWidth: 2,
-                            data: data_burpee,
-                        }]
-                }
+                    for ([key1, value1] of Object.entries(value)) {
+                        dia.push(key1)
+                        valor.push(value1)
+                    }
 
-                createChart(ctx1, dados)
+                    console.log(dia)
+
+                    let dados = {
+                        labels: dia.reverse(),
+                            datasets: [{
+                                label: labels[cont] + " - Últimos 7 dias",
+                                backgroundColor: 'rgba(229, 57, 53, 0.2)',
+                                borderColor: 'rgb(229, 57, 53)',
+                                borderWidth: 2,
+                                data: valor.reverse(),
+                            }]
+                        }
+                    
+                    var ctx = document.getElementById(contexto[cont]).getContext('2d');
+                    createChart (ctx, dados)
+                    cont++
+                }
             }
         })
-
-        console.log(data_burpee)
-        console.log(dia_burpee)
 
         function createChart (ctx, dados) {
             var chart = new Chart(ctx, {

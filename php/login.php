@@ -1,5 +1,6 @@
 <?php
     require_once "database.php";
+    session_start();
 
     $email = $_POST['email'];
     $senha = $_POST['senha'];
@@ -10,13 +11,18 @@
 
     foreach ($conn->query($sql) as $row) {
         if ($row['email'] == $email && $senha == $row['senha']) {
-            echo "É você mesmo! =)";
+            $_SESSION['nome'] = $row['nome'];
+            $_SESSION['email'] = $row['email'];
+            $_SESSION['senha'] = $row['senha'];
+            $_SESSION['id'] = $row['id'];
+
             $auth_success = true;
+            header('Location: ../index.php');
             break;
         }
     }
 
     if (!$auth_success) {
-        echo 'Não tente hackear! =(';
+        header('Location: ../login.html');
     }
 ?>
