@@ -1,3 +1,15 @@
+<?php
+    require_once "php/database.php";
+    session_start();
+
+    $id = $_SESSION['id'];
+    $nome = $_SESSION['nome'];
+
+    if (!isset($id)) {
+        header('Location: login.html');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -167,9 +179,9 @@
                         <div class="col-6">
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="card-title">Elench Press</h3>
+                                    <h3 class="card-title">Burpee</h3>
                                     <h6 class="card-subtitle mb-2 text-muted">Últimos 7 dias</h6>
-                                    <canvas id="elench-press-graph"></canvas>
+                                    <canvas id="burpee-graph"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -177,9 +189,112 @@
                         <div class="col-6">
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="card-title">Clean (Power)</h3>
+                                    <h3 class="card-title">Air Squat</h3>
                                     <h6 class="card-subtitle mb-2 text-muted">Últimos 7 dias</h6>
-                                    <canvas id="clean-power-graph"></canvas>
+                                    <canvas id="air-squat-graph"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Grid row-->
+
+                    <!--Grid row-->
+                    <div class="row mt-4">
+                    
+                        <div class="col-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Front Squat</h3>
+                                    <h6 class="card-subtitle mb-2 text-muted">Últimos 7 dias</h6>
+                                    <canvas id="front-squat-graph"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Back Squat</h3>
+                                    <h6 class="card-subtitle mb-2 text-muted">Últimos 7 dias</h6>
+                                    <canvas id="back-squat-graph"></canvas>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                    <!--Grid row-->
+
+                    <!--Grid row-->
+                    <div class="row mt-4">
+
+                        <div class="col-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Overhead Squat</h3>
+                                    <h6 class="card-subtitle mb-2 text-muted">Últimos 7 dias</h6>
+                                    <canvas id="overhead-squat-graph"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="col-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Shoulder Press</h3>
+                                    <h6 class="card-subtitle mb-2 text-muted">Últimos 7 dias</h6>
+                                    <canvas id="shoulder-press-graph"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <!--Grid row-->
+
+                    <!--Grid row-->
+                    <div class="row mt-4">
+                    
+                        <div class="col-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Push Press</h3>
+                                    <h6 class="card-subtitle mb-2 text-muted">Últimos 7 dias</h6>
+                                    <canvas id="push-press-graph"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Push Jerk</h3>
+                                    <h6 class="card-subtitle mb-2 text-muted">Últimos 7 dias</h6>
+                                    <canvas id="push-jerk-graph"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <!--Grid row-->
+
+                    <!--Grid row-->
+                    <div class="row mt-4">
+                    
+                        <div class="col-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Deadlift</h3>
+                                    <h6 class="card-subtitle mb-2 text-muted">Últimos 7 dias</h6>
+                                    <canvas id="deadlift-graph"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="col-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="card-title">Pull Up</h3>
+                                    <h6 class="card-subtitle mb-2 text-muted">Últimos 7 dias</h6>
+                                    <canvas id="pull-up-graph"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -218,39 +333,51 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
     <script>
-        var ctx1 = document.getElementById('elench-press-graph').getContext('2d');
-        let data_elench_press = [], dia_elench_press = [];
+        var ctx1 = document.getElementById('burpee-graph').getContext('2d');
+        var ctx2 = document.getElementById('air-squat-graph').getContext('2d');
+        var ctx3 = document.getElementById('front-squat-graph').getContext('2d');
+        var ctx4 = document.getElementById('back-squat-graph').getContext('2d');
+        var ctx5 = document.getElementById('overhead-squat-graph').getContext('2d');
+        var ctx6 = document.getElementById('shoulder-press-graph').getContext('2d');
+        var ctx7 = document.getElementById('push-press-graph').getContext('2d');
+        var ctx8 = document.getElementById('push-jerk-graph').getContext('2d');
+        var ctx9 = document.getElementById('deadlift-graph').getContext('2d');
+        var ctx10 = document.getElementById('pull-up-graph').getContext('2d');
+
+        let data_burpee = [], dia_burpee = [];
 
         $.ajax({
+            method: "POST",
+            data: { 1: 'burpee', 2: 'air-squat', 3: 'front-squat', 4: 'back-squat', 5: 'overhead-squat', 6: 'shoulder-press', 7: 'push-press', 8: 'push-jerk', 9: 'deadlift', 10: 'pull-up' },
             url: "php/updatePR.php",
-            data: {},
             success: function (data) {
+                console.log(data)
                 data = JSON.parse(data)
                 for ([key, value] of Object.entries(data)) {
-                    data_elench_press.push(value)
-                    dia_elench_press.push(key)
+                    data_burpee.push(value)
+                    dia_burpee.push(key)
                 }
 
                 let dados = {
-                    labels: dia_elench_press,
+                    labels: dia_burpee,
                         datasets: [{
-                            label: "Elench Press - Últimos 7 dias",
+                            label: "Burpee - Últimos 7 dias",
                             backgroundColor: 'rgba(229, 57, 53, 0.2)',
                             borderColor: 'rgb(229, 57, 53)',
                             borderWidth: 2,
-                            data: data_elench_press,
+                            data: data_burpee,
                         }]
                 }
 
-                createChartElenchPress(dados)
+                createChart(ctx1, dados)
             }
         })
 
-        console.log(data_elench_press)
-        console.log(dia_elench_press)
+        console.log(data_burpee)
+        console.log(dia_burpee)
 
-        function createChartElenchPress (dados) {
-            var chart = new Chart(ctx1, {
+        function createChart (ctx, dados) {
+            var chart = new Chart(ctx, {
                 // The type of chart we want to create
                 type: 'bar',
 
@@ -265,7 +392,7 @@
             });
         }
 
-        var ctx2 = document.getElementById('clean-power-graph').getContext('2d');
+        /*
 
         var chart = new Chart(ctx2, {
             // The type of chart we want to create
@@ -288,7 +415,8 @@
                 responsive: true,
                 //maintainAspectRatio: false,
             }
-        });
+        });*/
+
     </script>
 </body>
 

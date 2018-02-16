@@ -47,6 +47,12 @@
     display: block;
 }
 
+#card-cadastro {
+    width: 65%;
+    margin: 40px auto;
+    display: block;
+}
+
 .bg-login {
     background-color: #E53935 !important;
 }
