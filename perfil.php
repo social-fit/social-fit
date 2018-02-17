@@ -172,98 +172,136 @@
                 </nav>
 
                  
-                <div class="col-md-10">
+                <div class="col-md-10 mx-auto my-4" style="width: 85%">
                     <div class="card">
                         <div class="card-board">
                             <h1 class="card-title mx-4 my-4">Perfil</h1>
                         </div>
 
                         <div class="row mt-4 mx-2">
-                        <div class="col-md-12">
-                            <!--Card-->
-                            <div class="card">
-                            
-                                <!--Card image-->
-                                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
-                            
-                                <!--Card content-->
-                                <div class="card-body text-center">
-                                    <!--Title-->
-                                    <h4 class="card-title"><strong>Nome do usuário</strong></h4>
-                                    <!--Text-->
-                                    <p class="card-text">85 seguidores</p>
-
-                                    <a href="#" class="btn btn-danger">Ver Contatos</a>
-                                </div>
-                            
-                            </div>
-                            <!--/.Card-->
-                        </div>
-                    </div>
-
-                    <div class="row mt-4 mx-2">
-                        <div class="col-md-4">
-                            <!--Card-->
-                            <div class="card">
-                            
+                            <div class="col-md-12">
+                                <!--Card-->
+                                <div class="card">
                                 
-                            
-                                <!--Card content-->
-                                <div class="card-body">
-                                    <!--Title-->
-                                    <h4 class="card-title">Dados de contato</h4>
-                                    <!--Text-->
-            
-                                    <div class="md-form">
-                                        <i class="fa fa-envelope prefix grey-text"></i>
-                                        <input type="text" id="form11" class="form-control" disabled>
-                                        <label for="form11" class="disabled">e-mail</label>
+                                    <!--Card image-->
+                                    <img style="max-height: 200px;" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
+                                
+                                    <!--Card content-->
+                                    <div class="card-body text-center">
+                                        <!--Title-->
+                                        <h4 class="card-title"><strong>Nome do usuário</strong></h4>
+                                        <!--Text-->
+                                        <p class="card-text">85 seguidores</p>
+
+                                        <a href="#" class="btn btn-danger">Ver Contatos</a>
                                     </div>
-                                </div>
-                            
-                            </div>
-                            <!--/.Card-->
-                        </div>
-                        <div class="col-md-4">
-                            <!--Card-->
-                            <div class="card">
-                            
                                 
-                            
-                                <!--Card content-->
-                                <div class="card-body">
-                                    <!--Title-->
-                                    <h4 class="card-title">Data de Nascimento</h4>
+                                </div>
+                                <!--/.Card-->
+                            </div>
+                        </div>
+
+                        <div class="row my-4 mx-2">
+                            <div class="col-md-4">
+                                <!--Card-->
+                                <div class="card">
+                                
                                     
-                                    <div class="md-form">
-                                        <i class="fa fa-calendar prefix grey-text"></i>
-                                        <input type="text" id="formcal" class="form-control" disabled>
-                                        <label for="formcal" class="disabled">01/00/0000</label>
-                                    </div>
-                                </div>
-                            
-                            </div>
-                            <!--/.Card-->
-                        </div>
-                        <div class="col-md-4">
-                            <!--Card-->
-                            <div class="card">
-                            
                                 
-                            
-                                <!--Card content-->
-                                <div class="card-body">
-                                    <!--Title-->
-                                    <h4 class="card-title">Card title</h4>
-                                    <!--Text-->
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Button</a>
+                                    <!--Card content-->
+                                    <div class="card-body">
+                                        <!--Title-->
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                                <h4 class="card-title">Dados de contato</h4>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <a href="">
+                                                    <i class="fas fa-pencil-alt fa-lg"></i>
+                                                </a>
+                                            </div>
+                                
+                                        </div>
+                                        
+                                        
+                                        
+                    
+
+                                        <!--Text-->
+                
+                                        <div class="md-form">
+                                            <i class="fas fa-envelope prefix grey-text"></i>
+                                            <input type="text" id="form11" class="form-control" disabled>
+                                            <label for="form11" class="disabled">e-mail</label>
+                                        </div>
+                                    </div>
+                                
                                 </div>
-                            
+                                <!--/.Card-->
                             </div>
-                            <!--/.Card-->
+                            <div class="col-md-4">
+                                <!--Card-->
+                                <div class="card">
+                                
+                                    
+                                
+                                    <!--Card content-->
+                                    <div class="card-body">
+                                        <!--Title-->
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                                <h4 class="card-title">Data de Nascimento</h4>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <a href="">
+                                                    <i class="fas fa-pencil-alt fa-lg"></i>
+                                                </a>
+                                            </div>
+                                
+                                        </div>
+                                        
+                                        <div class="md-form">
+                                            <i class="fas fa-calendar prefix grey-text"></i>
+                                            <input type="text" id="formcal" class="form-control" disabled>
+                                            <label for="formcal" class="disabled">01/00/0000</label>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                                <!--/.Card-->
+                            </div>
+                            <div class="col-md-4">
+                                <!--Card-->
+                                <div class="card">
+                                
+                                    
+                                
+                                    <!--Card content-->
+                                    <div class="card-body">
+                                        <!--Title-->
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                                <h4 class="card-title">País</h4>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <a href="">
+                                                    <i class="fas fa-pencil-alt fa-lg"></i>
+                                                </a>
+                                            </div>
+                                
+                                        </div>
+                                        <!--Text-->
+                                        <div class="md-form">
+                                            <i class="fas fa-map-marker-alt prefix grey-text"></i>
+                                            <input type="text" id="formpais" class="form-control" disabled>
+                                            <label for="formpais" class="disabled">Brasil</label>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                                <!--/.Card-->
+                            </div>
                         </div>
-                    </div>
                     </div>   
                     
                 </div>
