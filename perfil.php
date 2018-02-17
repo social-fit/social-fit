@@ -17,15 +17,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Personal Records</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Página Inicial</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
 
@@ -41,7 +40,7 @@
             <ul class="navbar-nav nav-flex-icons">
                 <li class="nav-item">
                     <a href="" class="nav-link">
-                        <i class="fa fa-bars fa-lg"></i>
+                        <i class="fas fa-bars fa-lg"></i>
                     </a>
                 </li>
             </ul>
@@ -54,7 +53,7 @@
             <!-- Collapse button -->
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
-                <span class="fa fa-search"></span>
+                <span class="fas fa-search"></span>
             </button>
 
             <!-- Collapsible content -->
@@ -62,7 +61,7 @@
 
                 <!-- Search form -->
                 <form class="form-inline mx-5" style="width: 100%;">
-                    <i class="fa fa-search prefix"></i>
+                    <i class="fas fa-search prefix"></i>
                     <input class="form-control" style="width: 95%;" type="text" placeholder="Pesquisar" aria-label="Search">
                 </form>
 
@@ -74,19 +73,19 @@
 
                 <li class="nav-item">
                     <a href="" class="nav-link">
-                        <i class="fa fa-th fa-lg"></i>
+                        <i class="fas fa-th fa-lg"></i>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="" class="nav-link">
-                        <i class="fa fa-bell fa-lg"></i>
+                        <i class="fas fa-bell fa-lg"></i>
                     </a>
                 </li>
 
                 <!-- Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-user fa-lg"></i>
+                        <i class="fas fa-user fa-lg"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#">Action</a>
@@ -171,82 +170,102 @@
                         </ul>
                     </div>
                 </nav>
-                
+
+                 
                 <div class="col-md-10">
-
-                    <form class="mt-4" action="php/getPR.php" method="GET">
-
-                        <div class="card">
-                        
-                            <!--Card content-->
-                            <div class="card-body">
-                                <!--Title-->
-                                <h1 class="card-title">Personal Records</h1>
-                                <!--Text-->
-                                
-                                <div class="dados_usuario row mt-4">
-                                    <div class="col-12 col-sm-6 col-md-4 form-group">
-                                        <label for="elench-press">Burpee</label>
-                                        <input type="text" name="burpee" class="form-control" id="elench-press" placeholder="205">
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-4 form-group">
-                                        <label for="clean-power">Air Squat</label>
-                                        <input type="text" name="clean_power" class="form-control" id="clean-power" placeholder="175">
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-4 form-group">
-                                        <label for="clean-squat">Front Squat</label>
-                                        <input type="text" name="clean_squat" class="form-control" id="clean-squat" placeholder="195">
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-4 form-group">
-                                        <label for="clean-jerk">Back Squat</label>
-                                        <input type="text" name="clean_jerk" class="form-control" id="clean-jerk" placeholder="165">
-                                    </div>
-                            
-                                    <div class="col-12 col-sm-6 col-md-4 form-group">
-                                        <label for="press-push">Overhead Squat</label>
-                                        <input type="text" name="press_push" class="form-control" id="press-push" placeholder="145">
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-4 form-group">
-                                        <label for="press-shoulder">Shoulder Press</label>
-                                        <input type="text" name="press_shoulder" class="form-control" id="press-shoulder" placeholder="140">
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-4 form-group">
-                                        <label for="elench-press">Push Press</label>
-                                        <input type="text" name="" class="form-control" id="elench-press" placeholder="205">
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-4 form-group">
-                                        <label for="clean-power">Push Jerk</label>
-                                        <input type="text" name="" class="form-control" id="clean-power" placeholder="175">
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-4 form-group">
-                                        <label for="clean-squat">Deadlift</label>
-                                        <input type="text" name="" class="form-control" id="clean-squat" placeholder="195">
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-4 form-group">
-                                        <label for="clean-jerk">Pull Up</label>
-                                        <input type="text" name="" class="form-control" id="clean-jerk" placeholder="165">
-                                    </div>
-                            
-                                    <div class="col-12 col-sm-6 col-md-4 form-group">
-                                        <label for="press-push">Press (Push)</label>
-                                        <input type="text" name="" class="form-control" id="press-push" placeholder="145">
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-4 form-group">
-                                        <label for="press-shoulder">Press (Shoulder)</label>
-                                        <input type="text" name="" class="form-control" id="press-shoulder" placeholder="140">
-                                    </div>
-
-                                    <div class="d-block mx-auto">
-                                        <input class="btn btn-danger" type="submit"></input>
-                                    </div>
-                                </div>
-
-                            </div>
-                            
+                    <div class="card">
+                        <div class="card-board">
+                            <h1 class="card-title mx-4 my-4">Perfil</h1>
                         </div>
 
-                        
-                    </form>
+                        <div class="row mt-4 mx-2">
+                        <div class="col-md-12">
+                            <!--Card-->
+                            <div class="card">
+                            
+                                <!--Card image-->
+                                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
+                            
+                                <!--Card content-->
+                                <div class="card-body text-center">
+                                    <!--Title-->
+                                    <h4 class="card-title"><strong>Nome do usuário</strong></h4>
+                                    <!--Text-->
+                                    <p class="card-text">85 seguidores</p>
+
+                                    <a href="#" class="btn btn-danger">Ver Contatos</a>
+                                </div>
+                            
+                            </div>
+                            <!--/.Card-->
+                        </div>
+                    </div>
+
+                    <div class="row mt-4 mx-2">
+                        <div class="col-md-4">
+                            <!--Card-->
+                            <div class="card">
+                            
+                                
+                            
+                                <!--Card content-->
+                                <div class="card-body">
+                                    <!--Title-->
+                                    <h4 class="card-title">Dados de contato</h4>
+                                    <!--Text-->
+            
+                                    <div class="md-form">
+                                        <i class="fa fa-envelope prefix grey-text"></i>
+                                        <input type="text" id="form11" class="form-control" disabled>
+                                        <label for="form11" class="disabled">e-mail</label>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                            <!--/.Card-->
+                        </div>
+                        <div class="col-md-4">
+                            <!--Card-->
+                            <div class="card">
+                            
+                                
+                            
+                                <!--Card content-->
+                                <div class="card-body">
+                                    <!--Title-->
+                                    <h4 class="card-title">Data de Nascimento</h4>
+                                    
+                                    <div class="md-form">
+                                        <i class="fa fa-calendar prefix grey-text"></i>
+                                        <input type="text" id="formcal" class="form-control" disabled>
+                                        <label for="formcal" class="disabled">01/00/0000</label>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                            <!--/.Card-->
+                        </div>
+                        <div class="col-md-4">
+                            <!--Card-->
+                            <div class="card">
+                            
+                                
+                            
+                                <!--Card content-->
+                                <div class="card-body">
+                                    <!--Title-->
+                                    <h4 class="card-title">Card title</h4>
+                                    <!--Text-->
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Button</a>
+                                </div>
+                            
+                            </div>
+                            <!--/.Card-->
+                        </div>
+                    </div>
+                    </div>   
+                    
                 </div>
             </div>
         </div>

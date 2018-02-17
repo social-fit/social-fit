@@ -63,3 +63,8 @@ label{
 .bg-login {
     background-color: #E53935 !important;
 }
+
+.dados_usuario{
+    color: #E53935;
+    font-weight: bold;
+}
