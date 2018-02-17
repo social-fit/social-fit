@@ -60,9 +60,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                 <!-- Search form -->
-                <form class="form-inline">
+                <form class="form-inline mx-5" style="width: 100%;">
                     <i class="fas fa-search prefix"></i>
-                    <input class="form-control mr-sm-2" type="text" placeholder="Pesquisar" aria-label="Search">
+                    <input class="form-control" style="width: 95%;" type="text" placeholder="Pesquisar" aria-label="Search">
                 </form>
 
             </div>
@@ -113,19 +113,19 @@
                     <div class="sidebar-sticky">
                         <ul class="navbar-nav flex-column nav-flex-icons">
                             <li class="nav-item">
-                                <a class="side-link nav-link">
+                                <a href="index.php" class="side-link nav-link">
                                     <i class="fas fa-home fa-lg fa-fw"></i>
                                     <span class="mx-md-2">Início</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="stats.html" class="side-link nav-link">
+                                <a href="stats.php" class="side-link nav-link">
                                     <i class="fas fa-signal fa-lg fa-fw"></i>
                                     <span class="mx-md-2">Estatísticas</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="personal-records.html" class="side-link nav-link">
+                                <a href="personal-records.php" class="side-link nav-link">
                                     <i class="fas fa-child fa-lg fa-fw"></i>
                                     <span class="mx-md-2">Personal Records</span>
                                 </a>

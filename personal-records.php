@@ -61,9 +61,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                 <!-- Search form -->
-                <form class="form-inline">
+                <form class="form-inline mx-5" style="width: 100%;">
                     <i class="fa fa-search prefix"></i>
-                    <input class="form-control mr-sm-2" type="text" placeholder="Pesquisar" aria-label="Search">
+                    <input class="form-control" style="width: 95%;" type="text" placeholder="Pesquisar" aria-label="Search">
                 </form>
 
             </div>
@@ -114,19 +114,19 @@
                     <div class="sidebar-sticky">
                         <ul class="navbar-nav flex-column nav-flex-icons">
                             <li class="nav-item">
-                                <a class="side-link nav-link">
+                                <a href="index.php" class="side-link nav-link">
                                     <i class="fas fa-home fa-lg fa-fw"></i>
                                     <span class="mx-md-2">Início</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="stats.html" class="side-link nav-link">
+                                <a href="stats.php" class="side-link nav-link">
                                     <i class="fas fa-signal fa-lg fa-fw"></i>
                                     <span class="mx-md-2">Estatísticas</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="personal-records.html" class="side-link nav-link">
+                                <a href="personal-records.php" class="side-link nav-link">
                                     <i class="fas fa-child fa-lg fa-fw"></i>
                                     <span class="mx-md-2">Personal Records</span>
                                 </a>
@@ -173,64 +173,79 @@
                 </nav>
                 
                 <div class="col-md-10">
-                    <h1 class="mt-4">Personal Records</h1>
-                    <form action="php/getPR.php" method="GET">
-                        <div class="row mt-4">
-                            <div class="col-12 col-sm-6 col-md-4 form-group">
-                                <label for="elench-press">Elench Press</label>
-                                <input type="text" name="elench_press" class="form-control" id="elench-press" placeholder="205">
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 form-group">
-                                <label for="clean-power">Clean (Power)</label>
-                                <input type="text" name="clean_power" class="form-control" id="clean-power" placeholder="175">
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 form-group">
-                                <label for="clean-squat">Clean (Squat)</label>
-                                <input type="text" name="clean_squat" class="form-control" id="clean-squat" placeholder="195">
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 form-group">
-                                <label for="clean-jerk">Clean + Jerk</label>
-                                <input type="text" name="clean_jerk" class="form-control" id="clean-jerk" placeholder="165">
-                            </div>
-                    
-                            <div class="col-12 col-sm-6 col-md-4 form-group">
-                                <label for="press-push">Press (Push)</label>
-                                <input type="text" name="press_push" class="form-control" id="press-push" placeholder="145">
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 form-group">
-                                <label for="press-shoulder">Press (Shoulder)</label>
-                                <input type="text" name="press_shoulder" class="form-control" id="press-shoulder" placeholder="140">
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 form-group">
-                                <label for="elench-press">Elench Press</label>
-                                <input type="text" name="" class="form-control" id="elench-press" placeholder="205">
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 form-group">
-                                <label for="clean-power">Clean (Power)</label>
-                                <input type="text" name="" class="form-control" id="clean-power" placeholder="175">
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 form-group">
-                                <label for="clean-squat">Clean (Squat)</label>
-                                <input type="text" name="" class="form-control" id="clean-squat" placeholder="195">
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 form-group">
-                                <label for="clean-jerk">Clean + Jerk</label>
-                                <input type="text" name="" class="form-control" id="clean-jerk" placeholder="165">
-                            </div>
-                    
-                            <div class="col-12 col-sm-6 col-md-4 form-group">
-                                <label for="press-push">Press (Push)</label>
-                                <input type="text" name="" class="form-control" id="press-push" placeholder="145">
-                            </div>
-                            <div class="col-12 col-sm-6 col-md-4 form-group">
-                                <label for="press-shoulder">Press (Shoulder)</label>
-                                <input type="text" name="" class="form-control" id="press-shoulder" placeholder="140">
-                            </div>
 
-                            <div class="d-block mx-auto">
-                                <input class="btn btn-danger" type="submit"></input>
+                    <form class="mt-4" action="php/getPR.php" method="GET">
+
+                        <div class="card">
+                        
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Title-->
+                                <h1 class="card-title">Personal Records</h1>
+                                <!--Text-->
+                                
+                                <div class="row mt-4">
+                                    <div class="col-12 col-sm-6 col-md-4 form-group">
+                                        <label for="elench-press">Burpee</label>
+                                        <input type="text" name="burpee" class="form-control" id="elench-press" placeholder="205">
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4 form-group">
+                                        <label for="clean-power">Air Squat</label>
+                                        <input type="text" name="clean_power" class="form-control" id="clean-power" placeholder="175">
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4 form-group">
+                                        <label for="clean-squat">Front Squat</label>
+                                        <input type="text" name="clean_squat" class="form-control" id="clean-squat" placeholder="195">
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4 form-group">
+                                        <label for="clean-jerk">Back Squat</label>
+                                        <input type="text" name="clean_jerk" class="form-control" id="clean-jerk" placeholder="165">
+                                    </div>
+                            
+                                    <div class="col-12 col-sm-6 col-md-4 form-group">
+                                        <label for="press-push">Overhead Squat</label>
+                                        <input type="text" name="press_push" class="form-control" id="press-push" placeholder="145">
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4 form-group">
+                                        <label for="press-shoulder">Shoulder Press</label>
+                                        <input type="text" name="press_shoulder" class="form-control" id="press-shoulder" placeholder="140">
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4 form-group">
+                                        <label for="elench-press">Push Press</label>
+                                        <input type="text" name="" class="form-control" id="elench-press" placeholder="205">
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4 form-group">
+                                        <label for="clean-power">Push Jerk</label>
+                                        <input type="text" name="" class="form-control" id="clean-power" placeholder="175">
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4 form-group">
+                                        <label for="clean-squat">Deadlift</label>
+                                        <input type="text" name="" class="form-control" id="clean-squat" placeholder="195">
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4 form-group">
+                                        <label for="clean-jerk">Pull Up</label>
+                                        <input type="text" name="" class="form-control" id="clean-jerk" placeholder="165">
+                                    </div>
+                            
+                                    <div class="col-12 col-sm-6 col-md-4 form-group">
+                                        <label for="press-push">Press (Push)</label>
+                                        <input type="text" name="" class="form-control" id="press-push" placeholder="145">
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4 form-group">
+                                        <label for="press-shoulder">Press (Shoulder)</label>
+                                        <input type="text" name="" class="form-control" id="press-shoulder" placeholder="140">
+                                    </div>
+
+                                    <div class="d-block mx-auto">
+                                        <input class="btn btn-danger" type="submit"></input>
+                                    </div>
+                                </div>
+
                             </div>
+                            
                         </div>
+
+                        
                     </form>
                 </div>
             </div>
