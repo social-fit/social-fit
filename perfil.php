@@ -189,7 +189,7 @@
                                     <!--Card content-->
                                     <div class="card-body text-center">
                                         <!--Title-->
-                                        <h4 class="card-title"><strong>Nome do usuário</strong></h4>
+                                        <h4 class="card-title" id="nome"></h4>
                                         <!--Text-->
                                         <p class="card-text">85 seguidores</p>
 
@@ -231,8 +231,8 @@
                 
                                         <div class="md-form">
                                             <i class="fas fa-envelope prefix grey-text"></i>
-                                            <input type="text" id="form11" class="form-control" disabled>
-                                            <label for="form11" class="disabled">e-mail</label>
+                                            <input type="text" id="email" class="form-control" disabled>
+                                            <label for="email" class="disabled"></label>
                                         </div>
                                     </div>
                                 
@@ -262,8 +262,8 @@
                                         
                                         <div class="md-form">
                                             <i class="fas fa-calendar prefix grey-text"></i>
-                                            <input type="text" id="formcal" class="form-control" disabled>
-                                            <label for="formcal" class="disabled">01/00/0000</label>
+                                            <input type="text" id="datanasc" class="form-control" disabled>
+                                            <label for="datanasc" class="disabled"></label>
                                         </div>
                                     </div>
                                 
@@ -293,8 +293,8 @@
                                         <!--Text-->
                                         <div class="md-form">
                                             <i class="fas fa-map-marker-alt prefix grey-text"></i>
-                                            <input type="text" id="formpais" class="form-control" disabled>
-                                            <label for="formpais" class="disabled">Brasil</label>
+                                            <input type="text" id="pais" class="form-control" disabled>
+                                            <label for="pais" class="disabled"></label>
                                         </div>
                                     </div>
                                 
@@ -328,6 +328,29 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
+
+
+    <script>
+        $.ajax({
+            method: "POST",
+            data: {'id': "<?php echo $id ?>"},
+            url: "php/loadProfile.php",
+            success: function(data) {
+                data = JSON.parse(data) 
+                console.log(data);
+
+                for([key,value] of Object.entries(data)){
+                    if(key == 'nome'){
+                        document.querySelector('#nome').innerHTML = `<h4 class="card-title" id="nome"><strong>`+value+`</strong></h4>`;
+                    }
+                    else{
+                        document.querySelector('#'+key).value=value;
+                    }
+                }
+
+            }
+        })
+    </script>
 </body>
 
 </html>
