@@ -6,6 +6,11 @@
 
 Rede social destinada às pessoas envolvidas em atividades físicas como Academia e CrossFit de forma que elas possam compartilhar seus resultados com os amigos. Também se destina à divulgação de eventos relacionados à área o que seria interessante para as empresas envolvidas nesta área.
 
+Projeto desenvolvido por:
+
+- [José Anderson Silva dos Santos](https://github.com/joseanderson1995silva)
+- [Walisson da Silva Soares](https://www.walissonsilva.com)
+
 ## Inspiração
 
 A ideia do projeto surge de projetos anteriores realizados na área de Engenharia Biomédica como sensores de parâmetros fisiológicos para a disciplina de Instrumentação Eletrônica. A banca sugeriu a implementação de uma rede social para as pessoas compartilharem as atividades físicas realizadas e também para a divulgação de eventos na área.

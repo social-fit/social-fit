@@ -29,8 +29,8 @@ CREATE TABLE Dados (
   push_jerk int,
   deadlift int,
   pull_up int,
-  dia DATE,
-  usuario_id int,
+  dia DATE NOT NULL,
+  usuario_id int NOT NULL,
   primary key (id),
   foreign key (usuario_id) references Usuario(id)
 );
