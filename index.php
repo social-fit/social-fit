@@ -177,7 +177,7 @@
                             <div class="card">
                             
                                 <!--Card image-->
-                                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
+                                <img class="img-fluid" src="images/img01.jpeg" alt="Card image cap">
                             
                                 <!--Card content-->
                                 <div class="card-body">
@@ -196,7 +196,7 @@
                             <div class="card">
                             
                                 <!--Card image-->
-                                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
+                                <img class="img-fluid" src="images/img02.jpeg" alt="Card image cap">
                             
                                 <!--Card content-->
                                 <div class="card-body">
@@ -215,7 +215,7 @@
                             <div class="card">
                             
                                 <!--Card image-->
-                                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
+                                <img class="img-fluid" src="images/img03.jpeg" alt="Card image cap">
                             
                                 <!--Card content-->
                                 <div class="card-body">

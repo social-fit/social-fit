@@ -17,7 +17,7 @@ function ocultar_barra() {
 
     b = document.getElementById("barralateral");
     b.outerHTML = "";
-    document.getElementById("pagina_real").className = "col-md-12";
+    document.getElementById("pagina_real").className = "col-md-12 mx-auto my-4";
 
     a.style.opacity = 1;
 
@@ -91,8 +91,7 @@ function mostrar_barra() {
                 </nav>
 
             `
-    document.getElementById("pagina_real").className = "col-md-10";
-
+    document.getElementById("pagina_real").className = "col-md-10 mx-auto my-4";
     a.innerHTML = barra_lateral + a.innerHTML;
 
     a.style.opacity = 1;
