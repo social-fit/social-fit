@@ -6,7 +6,7 @@
     $nome = $_SESSION['nome'];
 
     if (!isset($id)) {
-        header('Location: login.html');
+        header('Location: login.php');
     }
 ?>
 
