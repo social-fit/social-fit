@@ -2,9 +2,7 @@
     require_once "php/database.php";
     session_start();
 
-    $id = $_POST['id'];
-
-    if (isset($id)) {
+    if (isset($_SESSION['id'])) {
         header('Location: index.php');
     }
 ?>
@@ -35,7 +33,7 @@
     
     
     
-        <div class="card mx-auto mt-5" style="width: 35%;">
+        <div class="card mx-auto my-5" style="width: 35%;">
     
             <div class="card-body">
                 <form class="mt-2 mx-2" action="" method="POST">

@@ -2,7 +2,7 @@
     require_once "php/database.php";
     session_start();
 
-    $id = $_POST['id'];
+    $id = $_SESSION['id'];
 
     if (isset($id)) {
         header('Location: index.php');
@@ -32,10 +32,10 @@
 
     <!--Main layout-->
     <main>
-        <div class="card mx-auto mt-5" style="width: 55%;">
+        <div class="card mx-auto my-5" style="width: 55%;">
             <div class="card-body">
                 
-                <form class="mt-2 mx-2" action="php/cadastro.php" method="POST">
+                <form class="mt-2 mx-2" action="" method="POST">
 
                     <div class="text-center">
                         <a href="#">
@@ -80,7 +80,7 @@
                         <label for="input-pais">País</label>
                     </div>
                     <div class="form-check text-center">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="termos">
                         <label class="form-check-label" for="exampleCheck1"><a href="#" data-toggle="modal" data-target="#centralModalInfo">Aceito os termos e condições</a></label>
                     </div>
                     <div class="text-center my-4">
@@ -134,33 +134,39 @@
 
     <?php
         if (isset($_POST['btn-cadastro'])) {
+            $nome = $_POST['nome'];
             $email = $_POST['email'];
             $senha = $_POST['senha'];
-            $auth_success = false;
+            $datanasc = $_POST['datanasc'];
+            $pais = $_POST['pais'];
+            $termos = $_POST['termos'];
+            $sexo = "Prefiro nao informar";
         
-            if (empty($email) || empty($senha)) {
+            if (empty($email) || empty($senha) || empty($nome) || empty($datanasc) || empty($pais)) {
                 echo "<script> document.querySelector('#alert-cadastro').innerHTML = '<div class=\"alert alert-danger alert-dismissible fade show my-3\" role=\"alert\"><strong>Ops!</strong> Você precisa preencher todos os campos.<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div>' </script>";
+            } else if ($termos != "on") {
+                echo "<script> document.querySelector('#alert-cadastro').innerHTML = '<div class=\"alert alert-danger alert-dismissible fade show my-3\" role=\"alert\"><strong>Ops!</strong> Você precisa aceitar os termos e condições.<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div>' </script>";
             } else {
-                $sql = 'SELECT * FROM Usuario';
-                $row = $conn->query($sql);
+                // Verificar se o usuário já existe
+                $sql = "SELECT * FROM Usuario WHERE email = '$email'";
+
+                $ja_existente = false;
             
                 foreach ($conn->query($sql) as $row) {
-                    if ($row['email'] == $email && $senha == $row['senha']) {
-                        $_SESSION['nome'] = $row['nome'];
-                        $_SESSION['email'] = $row['email'];
-                        $_SESSION['senha'] = $row['senha'];
-                        $_SESSION['id'] = $row['id'];
-            
-                        $auth_success = true;
-                        header('Location: index.php');
-                        break;
-                    }
+                    $ja_existente = true;
                 }
-            
-                if (!$auth_success) {
-                    //echo "<script> alert('Usuário ou senha inválido(s)!'); window.location.href = '../login.html'</script>";
-                    echo "<script> document.querySelector('#alert-login').innerHTML = '<div class=\"alert alert-danger alert-dismissible fade show my-3\" role=\"alert\"><strong>Ops!</strong> Usuário ou senha inválidos.<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div>' </script>";
-                    //header('Location: ../login.html');
+
+                if ($ja_existente) {
+                    echo "<script> document.querySelector('#alert-cadastro').innerHTML = '<div class=\"alert alert-danger alert-dismissible fade show my-3\" role=\"alert\"><strong>Ops!</strong> Usuário já existente.<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div>' </script>";
+                } else { // Se o usuário não existir ainda no BD
+                    $sql = "INSERT INTO Usuario (nome, email, senha, sexo, datanasc, pais) VALUES ('$nome', '$email', '$senha', '$sexo', date('$datanasc'), '$pais')";
+                    $cadastrar = $conn->query($sql);
+
+                    if ($cadastrar) {
+                        echo "<script> document.querySelector('#alert-cadastro').innerHTML = '<div class=\"alert alert-info alert-dismissible fade show my-3\" role=\"alert\"><strong>Cadastro realizado com sucesso!</strong><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div>' </script>";
+                    } else {
+                        echo "<script> document.querySelector('#alert-cadastro').innerHTML = '<div class=\"alert alert-info alert-dismissible fade show my-3\" role=\"alert\"><strong>Ops!</strong> Não foi possível realizar o seu cadastro.<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div>' </script>";
+                    }
                 }
             }
         }
