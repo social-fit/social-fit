@@ -17,7 +17,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Perfil</title>
+    <title>Página Inicial</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
@@ -175,7 +175,7 @@
                 <div class="col-md-10 mx-auto my-4" id="pagina_real" style="width: 85%">
                     <div class="card">
                         <div class="card-board">
-                            <h1 class="card-title mx-4 my-4">Perfil</h1>
+                            <h1 class="card-title mx-4 my-4">Lista de Amigos</h1>
                         </div>
 
                         <div class="row mt-4 mx-2">
@@ -193,7 +193,6 @@
                                         <!--Text-->
                                         <p class="card-text">85 seguidores</p>
 
-                                        <a href="#" class="btn btn-danger">Ver Contatos</a>
                                     </div>
                                 
                                 </div>
@@ -210,30 +209,11 @@
                                 
                                     <!--Card content-->
                                     <div class="card-body">
-                                        <!--Title-->
-                                        <div class="row">
-                                            <div class="col-md-10">
-                                                <h4 class="card-title">Dados de contato</h4>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <a href="">
-                                                    <i class="fas fa-pencil-alt fa-lg"></i>
-                                                </a>
-                                            </div>
-                                
-                                        </div>
-                                        
-                                        
-                                        
-                    
-
+                                        <!--Title-->                                          
+                                        <h4 class="card-title">Amigo 1</h4>
                                         <!--Text-->
                 
-                                        <div class="md-form">
-                                            <i class="fas fa-envelope prefix grey-text"></i>
-                                            <input type="text" id="email" class="form-control" disabled>
-                                            <label for="email" class="disabled"></label>
-                                        </div>
+                                        <a href="#" class="btn btn-danger">Ver Perfil</a>
                                     </div>
                                 
                                 </div>
@@ -248,23 +228,9 @@
                                     <!--Card content-->
                                     <div class="card-body">
                                         <!--Title-->
-                                        <div class="row">
-                                            <div class="col-md-10">
-                                                <h4 class="card-title">Data de Nascimento</h4>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <a href="">
-                                                    <i class="fas fa-pencil-alt fa-lg"></i>
-                                                </a>
-                                            </div>
-                                
-                                        </div>
+                                        <h4 class="card-title">Amigo 2</h4>
                                         
-                                        <div class="md-form">
-                                            <i class="fas fa-calendar prefix grey-text"></i>
-                                            <input type="text" id="datanasc" class="form-control" disabled>
-                                            <label for="datanasc" class="disabled"></label>
-                                        </div>
+                                        <a href="#" class="btn btn-danger">Ver Perfil</a>
                                     </div>
                                 
                                 </div>
@@ -279,23 +245,9 @@
                                     <!--Card content-->
                                     <div class="card-body">
                                         <!--Title-->
-                                        <div class="row">
-                                            <div class="col-md-10">
-                                                <h4 class="card-title">País</h4>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <a href="">
-                                                    <i class="fas fa-pencil-alt fa-lg"></i>
-                                                </a>
-                                            </div>
-                                
-                                        </div>
+                                        <h4 class="card-title">Amigo 3</h4>
                                         <!--Text-->
-                                        <div class="md-form">
-                                            <i class="fas fa-map-marker-alt prefix grey-text"></i>
-                                            <input type="text" id="pais" class="form-control" disabled>
-                                            <label for="pais" class="disabled"></label>
-                                        </div>
+                                        <a href="#" class="btn btn-danger">Ver Perfil</a>
                                     </div>
                                 
                                 </div>

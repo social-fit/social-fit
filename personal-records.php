@@ -40,7 +40,7 @@
 
             <ul class="navbar-nav nav-flex-icons">
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a onclick="apertar_botao()" class="nav-link">
                         <i class="fa fa-bars fa-lg"></i>
                     </a>
                 </li>
@@ -109,8 +109,8 @@
 
         <!--Main container-->
         <div class="container-fluid">
-            <div class="row">
-                <nav class="col-md-2 d-none d-md-block bg-light navbar navbar-light blue-grey lighten-5">
+            <div class="row" id="pagina">
+                <nav class="col-md-2 d-none d-md-block bg-light navbar navbar-light blue-grey lighten-5" id="barralateral">
                     <div class="sidebar-sticky">
                         <ul class="navbar-nav flex-column nav-flex-icons">
                             <li class="nav-item">
@@ -172,7 +172,7 @@
                     </div>
                 </nav>
                 
-                <div class="col-md-10">
+                <div class="col-md-10" id="pagina_real">
 
                     <form class="mt-4" action="php/getPR.php" method="GET">
 
@@ -271,6 +271,8 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
+
+    <script src="js/comutar_barra.js"></script>
 </body>
 
 </html>

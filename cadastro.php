@@ -38,7 +38,7 @@
                 <form class="mt-2 mx-2" action="" method="POST">
 
                     <div class="text-center">
-                        <a href="#">
+                        <a href="index.php">
                             <img class="figure-img rounded" src="img/logo/logo-full.png" height="50" alt="">
                         </a>
                     </div>

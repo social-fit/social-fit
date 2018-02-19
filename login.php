@@ -38,7 +38,7 @@
             <div class="card-body">
                 <form class="mt-2 mx-2" action="" method="POST">
                     <div class="text-center">
-                        <a href="#">
+                        <a href="index.php">
                             <img class="figure-img rounded logo" src="img/logo/logo-full.png" height="30" alt="">
                         </a>
                     </div>
@@ -62,7 +62,7 @@
                     </div>
     
                     <div class="text-center my-4">
-                        <a href="#">Esqueceu o e-mail ou a senha?</a>
+                        <a href="#" data-toggle="modal" data-target="#centralModalInfo">Esqueceu o e-mail ou a senha?</a>
                     </div>
     
     
@@ -75,6 +75,38 @@
         </div>
     </main>
     <!--Main layout-->
+
+    <!-- Central Modal Medium Info -->
+    <div class="modal fade" id="centralModalInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-notify modal-info" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <p class="heading lead">Recuperação de cadastro</p>
+    
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                    </button>
+                </div>
+    
+                <!--Body-->
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="fa fa-times fa-4x mb-3 animated rotateIn"></i>
+                        <p>Função não implementada no momento.</p>
+                    </div>
+                </div>
+    
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+                    <a type="button" class="btn btn-outline-secondary-modal waves-effect" data-dismiss="modal"><i class="fas fa-times mr-3"></i>Fechar</a>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!-- Central Modal Medium Info-->
 
     <!--Footer-->
     <footer>

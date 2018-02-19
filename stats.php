@@ -40,8 +40,8 @@
 
             <ul class="navbar-nav nav-flex-icons">
                 <li class="nav-item">
-                    <a href="" class="nav-link">
-                        <i class="fa fa-bars fa-lg"></i>
+                    <a onclick="apertar_botao()" class="nav-link">
+                        <i class="fas fa-bars fa-lg"></i>
                     </a>
                 </li>
             </ul>
@@ -107,8 +107,8 @@
 
         <!--Main container-->
         <div class="container-fluid">
-            <div class="row">
-                <nav class="col-md-2 d-none d-md-block bg-light navbar navbar-light blue-grey lighten-5">
+            <div class="row" id="pagina">
+                <nav class="col-md-2 d-none d-md-block bg-light navbar navbar-light blue-grey lighten-5" id="barralateral">
                     <div class="sidebar-sticky">
                         <ul class="navbar-nav flex-column nav-flex-icons">
                             <li class="nav-item">
@@ -170,7 +170,7 @@
                     </div>
                 </nav>
 
-                <div class="col-md-10">
+                <div class="col-md-10" id="pagina_real">
                     <h1 class="mt-4">Estatísticas</h1>
                     
                     <!--Grid row-->
@@ -331,6 +331,8 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+    <script src="js/comutar_barra.js"></script>
 
     <script>
 
