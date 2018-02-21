@@ -35,6 +35,15 @@ CREATE TABLE Dados (
   foreign key (usuario_id) references Usuario(id)
 );
 
+CREATE TABLE Relacionamentos (
+  id int not null auto_increment,
+  self_id int not null,
+  friend_id int not null,
+  primary key (id),
+  foreign key (self_id) references Usuario(id),
+  foreign key (friend_id) references Usuario(id)
+);
+
 INSERT INTO Usuario
   (nome, email, senha, sexo, datanasc, pais)
 VALUES
@@ -44,25 +53,34 @@ INSERT INTO Usuario
 VALUES
   ("Jose Anderson", "joseanderson1995silva@gmail.com", "123", "Masculino", date("1995-04-29"), "Brasil");
 
+INSERT INTO Relacionamentos
+  (self_id,friend_id)
+VALUES
+  (1,2);
+INSERT INTO Relacionamentos
+  (self_id,friend_id)
+VALUES
+  (2,1);
+
 INSERT INTO Dados
   (burpee, air_squat, front_squat, back_squat, overhead_squat, shoulder_press, push_press, push_jerk, deadlift, pull_up, dia, usuario_id)
 VALUES
-  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), date("2018-02-15"), 1),
-  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), date("2018-02-14"), 1),
-  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), date("2018-02-13"), 1),
-  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), date("2018-02-12"), 1),
-  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), date("2018-02-11"), 1),
-  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), date("2018-02-10"), 1),
-  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), date("2018-02-09"), 1);
+  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), curdate(), 1),
+  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), curdate()-interval 1 day, 1),
+  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), curdate()-interval 2 day, 1),
+  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), curdate()-interval 3 day, 1),
+  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), curdate()-interval 4 day, 1),
+  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), curdate()-interval 5 day, 1),
+  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), curdate()-interval 6 day, 1);
 
 
 INSERT INTO Dados
   (burpee, air_squat, front_squat, back_squat, overhead_squat, shoulder_press, push_press, push_jerk, deadlift, pull_up, dia, usuario_id)
 VALUES
-  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), date("2018-02-15"), 2),
-  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), date("2018-02-14"), 2),
-  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), date("2018-02-13"), 2),
-  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), date("2018-02-12"), 2),
-  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), date("2018-02-11"), 2),
-  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), date("2018-02-10"), 2),
-  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), date("2018-02-09"), 2);
+  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), curdate(), 2),
+  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), curdate()-interval 1 day, 2),
+  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), curdate()-interval 2 day, 2),
+  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), curdate()-interval 3 day, 2),
+  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), curdate()-interval 4 day, 2),
+  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), curdate()-interval 5 day, 2),
+  (FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), FLOOR(1 + RAND() * 120), curdate()-interval 6 day, 2);

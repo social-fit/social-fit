@@ -88,8 +88,7 @@
                         <i class="fas fa-user fa-lg"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="perfil.php">Ver perfil</a>
                         <a class="dropdown-item" href="php/logout.php">Sair</a>
                     </div>
                 </li>
@@ -143,7 +142,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="side-link nav-link">
+                                <a href="amigos.php" class="side-link nav-link">
                                     <i class="fas fa-users fa-lg fa-fw"></i>
                                     <span class="mx-md-2">Amigos</span>
                                 </a>
