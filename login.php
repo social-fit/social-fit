@@ -152,7 +152,8 @@
                     $_SESSION['id'] = $row['id'];
         
                     $auth_success = true;
-                    header('Location: index.php');
+                    //header('Location: index.php');
+                    echo "<script> window.location = \"index.php\" </script>";
                     break;
                 }
             }
