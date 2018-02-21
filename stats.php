@@ -3,11 +3,26 @@
     session_start();
 
     $id = $_SESSION['id'];
-    $nome = $_SESSION['nome'];
+    $id_req = $_GET['id'];
 
-    if (!isset($id)) {
-        header('Location: login.php');
+    if ($id == $id_req){
+        if (!isset($id)) {
+            header('Location: login.php');
+        }
     }
+    else{
+        $sql = "SELECT self_id, friend_id FROM Relacionamentos WHERE self_id = '$id' AND friend_id = '$id_req'";
+        $row = $conn->query($sql);
+        $contador = 0;
+        foreach ($conn->query($sql) as $row) {
+            $contador = $contador + 1;
+        }
+        if($contador == 0){
+            header('Location: login.php');
+        }
+    }
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -87,8 +102,7 @@
                         <i class="fa fa-user fa-lg"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="perfil.php">Ver perfil</a>
                         <a class="dropdown-item" href="php/logout.php">Sair</a>
                     </div>
                 </li>
@@ -118,7 +132,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="stats.php" class="side-link nav-link">
+                                <a id="stats" class="side-link nav-link">
                                     <i class="fas fa-signal fa-lg fa-fw"></i>
                                     <span class="mx-md-2">Estatísticas</span>
                                 </a>
@@ -142,7 +156,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="side-link nav-link">
+                                <a href="amigos.php" class="side-link nav-link">
                                     <i class="fas fa-users fa-lg fa-fw"></i>
                                     <span class="mx-md-2">Amigos</span>
                                 </a>
@@ -338,7 +352,7 @@
 
         $.ajax({
             method: "POST",
-            data: {'id': "<?php echo $id ?>"}, 
+            data: {'id': "<?php echo $id_req ?>"}, 
             url: "php/updatePR.php",
             success: function (data) {
                 //console.log(data)
@@ -417,6 +431,9 @@
             }
         });*/
 
+    </script>
+    <script>
+        document.querySelector("#stats").href="stats.php?id="+<?php echo $id ?>
     </script>
 </body>
 

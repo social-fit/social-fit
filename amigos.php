@@ -88,8 +88,7 @@
                         <i class="fas fa-user fa-lg"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="perfil.php">Ver perfil</a>
                         <a class="dropdown-item" href="php/logout.php">Sair</a>
                     </div>
                 </li>
@@ -119,7 +118,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="stats.php" class="side-link nav-link">
+                                <a id="stats" class="side-link nav-link">
                                     <i class="fas fa-signal fa-lg fa-fw"></i>
                                     <span class="mx-md-2">Estatísticas</span>
                                 </a>
@@ -143,7 +142,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="side-link nav-link">
+                                <a href="amigos.php" class="side-link nav-link">
                                     <i class="fas fa-users fa-lg fa-fw"></i>
                                     <span class="mx-md-2">Amigos</span>
                                 </a>
@@ -191,7 +190,7 @@
                                         <!--Title-->
                                         <h4 class="card-title" id="nome"></h4>
                                         <!--Text-->
-                                        <p class="card-text">85 seguidores</p>
+                                        <p class="card-text" id="qtdeamigos"></p>
 
                                     </div>
                                 
@@ -200,59 +199,7 @@
                             </div>
                         </div>
 
-                        <div class="row my-4 mx-2">
-                            <div class="col-md-4">
-                                <!--Card-->
-                                <div class="card">
-                                
-                                    
-                                
-                                    <!--Card content-->
-                                    <div class="card-body">
-                                        <!--Title-->                                          
-                                        <h4 class="card-title">Amigo 1</h4>
-                                        <!--Text-->
-                
-                                        <a href="#" class="btn btn-danger">Ver Perfil</a>
-                                    </div>
-                                
-                                </div>
-                                <!--/.Card-->
-                            </div>
-                            <div class="col-md-4">
-                                <!--Card-->
-                                <div class="card">
-                                
-                                    
-                                
-                                    <!--Card content-->
-                                    <div class="card-body">
-                                        <!--Title-->
-                                        <h4 class="card-title">Amigo 2</h4>
-                                        
-                                        <a href="#" class="btn btn-danger">Ver Perfil</a>
-                                    </div>
-                                
-                                </div>
-                                <!--/.Card-->
-                            </div>
-                            <div class="col-md-4">
-                                <!--Card-->
-                                <div class="card">
-                                
-                                    
-                                
-                                    <!--Card content-->
-                                    <div class="card-body">
-                                        <!--Title-->
-                                        <h4 class="card-title">Amigo 3</h4>
-                                        <!--Text-->
-                                        <a href="#" class="btn btn-danger">Ver Perfil</a>
-                                    </div>
-                                
-                                </div>
-                                <!--/.Card-->
-                            </div>
+                        <div id="lista_amigos" class="container-fluid">
                         </div>
                     </div>   
                     
@@ -287,22 +234,54 @@
         $.ajax({
             method: "POST",
             data: {'id': "<?php echo $id ?>"},
-            url: "php/loadProfile.php",
+            url: "php/loadAmigos.php",
             success: function(data) {
                 data = JSON.parse(data) 
                 console.log(data);
+                document.querySelector('#nome').innerHTML = `<h4 class="card-title" id="nome"><strong>`+"<?php echo $nome ?>"+`</strong></h4>`;
+                let tamanho = Object.keys(data).length;
+                console.log(tamanho);
+                let linhas = (tamanho/3)|0 + 1;
+                console.log(linhas);
+                document.querySelector("#qtdeamigos").innerHTML=tamanho+` contatos`;
+                let count = 0;
+                let count_linhas = 0;
+                let a = document.querySelector('#lista_amigos');
 
                 for([key,value] of Object.entries(data)){
-                    if(key == 'nome'){
-                        document.querySelector('#nome').innerHTML = `<h4 class="card-title" id="nome"><strong>`+value+`</strong></h4>`;
+                    if((count % 3)==0){
+                        count_linhas = count_linhas + 1;
+                        a.innerHTML = a.innerHTML + `<div id="linha_`+count_linhas+`" class="row my-4 mx-2">
+                        </div>
+                        `;
                     }
-                    else{
-                        document.querySelector('#'+key).value=value;
-                    }
+                    let b = document.querySelector('#linha_'+count_linhas); 
+                    b.innerHTML = b.innerHTML + `
+                    <div class="col-md-4">
+                        <!--Card-->
+                        <div class="card">
+                            <!--Card content-->
+                            <div class="card-body">
+                                <!--Title-->                                          
+                                <h4 class="card-title">`+value+`</h4>
+                                <!--Text-->
+        
+                                <a id="amigo_`+count+`" class="btn btn-danger">Ver Estatísticas</a>
+                            </div>
+                        
+                        </div>
+                        <!--/.Card-->
+                    </div>
+                    `;
+                    document.querySelector('#amigo_'+count).href="stats.php?id="+key;
+                    count = count + 1;
                 }
 
             }
         })
+    </script>
+    <script>
+        document.querySelector("#stats").href="stats.php?id="+<?php echo $id ?>
     </script>
 </body>
 

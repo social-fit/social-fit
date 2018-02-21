@@ -118,7 +118,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="stats.php" class="side-link nav-link">
+                                <a id="stats" class="side-link nav-link">
                                     <i class="fas fa-signal fa-lg fa-fw"></i>
                                     <span class="mx-md-2">Estatísticas</span>
                                 </a>
@@ -255,6 +255,9 @@
     <script type="text/javascript" src="js/mdb.min.js"></script>
 
     <script src="js/comutar_barra.js"></script>
+    <script>
+        document.querySelector("#stats").href="stats.php?id="+<?php echo $id ?>
+    </script>
 </body>
 
 </html>
