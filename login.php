@@ -7,40 +7,6 @@
     }
 ?>
 
-<?php
-    if (isset($_POST['btn-entrar'])) {
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
-        $auth_success = false;
-    
-        if (empty($email) || empty($senha)) {
-            echo "<script> document.querySelector('#alert-login').innerHTML = '<div class=\"alert alert-danger alert-dismissible fade show my-3\" role=\"alert\"><strong>Ops!</strong> Você precisa preencher todos os campos.<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div>' </script>";
-        } else {
-            $sql = 'SELECT * FROM Usuario';
-            $row = $conn->query($sql);
-        
-            foreach ($conn->query($sql) as $row) {
-                if ($row['email'] == $email && $senha == $row['senha']) {
-                    $_SESSION['nome'] = $row['nome'];
-                    $_SESSION['email'] = $row['email'];
-                    $_SESSION['senha'] = $row['senha'];
-                    $_SESSION['id'] = $row['id'];
-        
-                    $auth_success = true;
-                    header('Location: index.php');
-                    break;
-                }
-            }
-        
-            if (!$auth_success) {
-                //echo "<script> alert('Usuário ou senha inválido(s)!'); window.location.href = '../login.html'</script>";
-                echo "<script> document.querySelector('#alert-login').innerHTML = '<div class=\"alert alert-danger alert-dismissible fade show my-3\" role=\"alert\"><strong>Ops!</strong> Usuário ou senha inválidos.<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div>' </script>";
-                //header('Location: ../login.html');
-            }
-        }
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -159,6 +125,43 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
+
+
+
 </body>
 
 </html>
+
+<?php
+    if (isset($_POST['btn-entrar'])) {
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+        $auth_success = false;
+    
+        if (empty($email) || empty($senha)) {
+            echo "<script> document.querySelector('#alert-login').innerHTML = '<div class=\"alert alert-danger alert-dismissible fade show my-3\" role=\"alert\"><strong>Ops!</strong> Você precisa preencher todos os campos.<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div>' </script>";
+        } else {
+            $sql = 'SELECT * FROM Usuario';
+            $row = $conn->query($sql);
+        
+            foreach ($conn->query($sql) as $row) {
+                if ($row['email'] == $email && $senha == $row['senha']) {
+                    $_SESSION['nome'] = $row['nome'];
+                    $_SESSION['email'] = $row['email'];
+                    $_SESSION['senha'] = $row['senha'];
+                    $_SESSION['id'] = $row['id'];
+        
+                    $auth_success = true;
+                    header('Location: index.php');
+                    break;
+                }
+            }
+        
+            if (!$auth_success) {
+                //echo "<script> alert('Usuário ou senha inválido(s)!'); window.location.href = '../login.html'</script>";
+                echo "<script> document.querySelector('#alert-login').innerHTML = '<div class=\"alert alert-danger alert-dismissible fade show my-3\" role=\"alert\"><strong>Ops!</strong> Usuário ou senha inválidos.<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div>' </script>";
+                //header('Location: ../login.html');
+            }
+        }
+    }
+?>
