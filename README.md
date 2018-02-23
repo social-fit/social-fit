@@ -28,6 +28,159 @@ Além disso, pode-se elencar as seguintes inspirações:
 
 Para utilização do SocialFIT é necessário a criação de um servidor *web*. Isto pode ser feito instalando o servidor LAMP que no Ubuntu e Linux Mint pode ser feito através do comando:
 
+```
+sudo apt install lamp-server^
+```
+
+Este comando irá instalar o Apache (servidor), o MySQL (banco de dados) e o PHP.
+
+A página *web* deve então estar localizada no endereço `/var/www/html`.
 
 
 ## Recursos da API
+
+
+### Cadastro
+
+A página de cadastro pode ser acessada através do link:
+
+```
+/cadastro.php
+```
+
+Os dados são passados através do método POST.
+Para executar a ação de cadastro é necessário utilizar os seguintes parâmetros:
+
+|    **Nome**   |  **Tipo**  |           **Descrição**           |
+|:---------:|:------:|:-----------------------------:|
+| :nome     | String |        Nome do Usuário        |
+| :email    | String |       E-mail do Usuário       |
+| :senha    | String |        Senha do Usuário       |
+| :datanasc |  Date  | Data de Nascimento do Usuário |
+| :pais     | String |   País de origem do Usuário   |
+| :sexo     | String |                               |
+
+Em caso de sucesso:
+
+```
+Cadastro realizado com sucesso
+```
+No caso de haver campos vazios:
+
+```
+Você precisa preencher todos os campos.
+```
+ou
+
+```
+Você precisa aceitar os termos e condições.
+```
+
+Para cadastro já existente:
+
+```
+Usuário já existente.
+```
+
+Em caso de erro:
+
+```
+Não foi possível realizar o seu cadastro.
+```
+
+Para apresentar a mensagem de erro foi utilizado um alert:
+
+```
+<script> document.querySelector('#alert-cadastro').innerHTML = '<div class=\"alert alert-info alert-dismissible fade show my-3\" role=\"alert\"><strong>Ops!</strong> Texto <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div>' </script>
+```
+
+Para executar o serviço foi utilizado o comando no MySQL:
+
+```
+INSERT INTO Usuario (nome, email, senha, sexo, datanasc, pais) VALUES ('$nome', '$email', '$senha', '$sexo', date('$datanasc'), '$pais');
+```
+
+### Login
+
+A página de login pode ser acessada através do link:
+
+```
+/login.php
+```
+
+Os dados são passados através do método POST.
+Para executar a ação de login é necessário utilizar os seguintes parâmetros:
+
+|    **Nome**   |  **Tipo**  |           **Descrição**           |
+|:---------:|:------:|:-----------------------------:|
+| :email    | String |       E-mail do Usuário       |
+| :senha    | String |        Senha do Usuário       |
+
+
+Em caso de sucesso, é executado o comando:
+
+```
+<script> window.location = \"index.php\" </script>
+```
+Ele redireciona para a página inicial.
+
+No caso de haver campos vazios:
+
+```
+Você precisa preencher todos os campos.
+```
+
+
+
+Em caso de erro, utilizando um alert:
+
+```
+<strong>Ops!</strong> Usuário ou senha inválidos.
+```
+
+Para executar o serviço foi utilizado o comando no MySQL e verificando os usuários existentes.
+
+```
+SELECT * FROM Usuario
+```
+
+### Perfil
+
+A página de login pode ser acessada através do link:
+
+```
+/php/loadProfile.php
+```
+
+Os dados são passados através do método POST.
+Para executar a ação de login é necessário utilizar os seguintes parâmetros:
+
+|    **Nome**   |  **Tipo**  |           **Descrição**           |
+|:---------:|:------:|:-----------------------------:|
+| :nome     | String |        Nome do Usuário        |
+| :email    | String |       E-mail do Usuário       |
+| :datanasc |  Date  | Data de Nascimento do Usuário |
+| :pais     | String |   País de origem do Usuário   |
+
+Em caso de sucesso:
+
+```
+{
+    nome: "Jose Anderson", 
+    email: "joseanderson1995silva@gmail.com",
+    datanasc: "29/04/1995",
+    pais: "Brasil"
+}
+```
+
+
+
+Em caso de erro, não mostra nada:
+
+Para executar o serviço foi utilizado o comando no MySQL e verificando o usuário da sessão.
+
+```
+SELECT * From Usuario WHERE Usuario.id = '$id'
+```
+
+
