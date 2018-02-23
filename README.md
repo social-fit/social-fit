@@ -26,16 +26,43 @@ Além disso, pode-se elencar as seguintes inspirações:
 
 ## Requisitos mínimos e instalação
 
-Para utilização do SocialFIT é necessário a criação de um servidor *web*. Isto pode ser feito instalando o servidor LAMP que no Ubuntu e Linux Mint pode ser feito através do comando:
+Para utilização do SocialFIT é necessário a criação de um servidor *web*. Isto pode ser feito instalando o servidor LAMP que no Ubuntu e derivados pode ser feito através do comando:
 
 ```
 sudo apt install lamp-server^
 ```
 
+Caso você esteja utilizando o Debian ou derivados, utilize o comando abaixo:
+
+```
+sudo apt-get install apache2 php7 mysql-server mysql-client php7-mysql
+```
+
 Este comando irá instalar o Apache (servidor), o MySQL (banco de dados) e o PHP.
 
-A página *web* deve então estar localizada no endereço `/var/www/html`.
+Em seguida, é necessário clonar esse repositório na pasta `/var/www/html/`. Para isso, execute os comandos abaixo:
 
+```
+cd /var/www/html/
+```
+
+```
+git clone https://github.com/social-fit/social-fit.git
+```
+
+Por fim, é necessário criar o banco de dados `social_fit` em seu computador. Para isso, acesse o seu banco de dados MySQL:
+
+```
+mysql -r root -p
+```
+
+Informe a sua senha. Após a autenticação, digite o comando abaixo:
+
+```
+SOURCE /var/www/html/social-fit/sql/database.sql;
+```
+
+Pronto! Está tudo configurado! Agora você pode acessar o sistema digitando `localhost/social-fit` no seu navegador. ;)
 
 ## Recursos da API
 
@@ -182,5 +209,35 @@ Para executar o serviço foi utilizado o comando no MySQL e verificando o usuár
 ```
 SELECT * From Usuario WHERE Usuario.id = '$id'
 ```
+
+## Telas do Sistema
+
+### Login
+
+![Tela de Login](img/screenshots/login.png)
+
+### Cadastro
+
+![Tela de Cadastro](img/screenshots/cadastro.png)
+
+### Homepage
+
+![Tela Inicial](img/screenshots/home.png)
+
+### Perfil
+
+![Tela de Perfil](img/screenshots/profile.png)
+
+### Amigos
+
+![Tela de Amigos](img/screenshots/friends.png)
+
+### Estatísticas
+
+![Tela de Estatísticas](img/screenshots/stats.png)
+
+### Personal Records
+
+![Tela de Personal Records](img/screenshots/personal-records.png)
 
 
