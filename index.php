@@ -1,12 +1,12 @@
 <?php
-    require_once "php/database.php";
-    session_start();
+    require_once "php/database.php"; //Busca no banco de dados
+    session_start(); //Inicializa a sessão
 
-    $id = $_SESSION['id'];
-    $nome = $_SESSION['nome'];
+    $id = $_SESSION['id']; //Identificador
+    $nome = $_SESSION['nome']; //Nome do Usuário
 
-    if (!isset($id)) {
-        header('Location: login.php');
+    if (!isset($id)) { //Verifica se a autenticação foi realizada.
+        header('Location: login.php'); //Caso contrário, é feito o redirecionamento para a página de login
     }
 ?>
 
@@ -18,25 +18,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Página Inicial</title>
-    <!-- Bootstrap core CSS -->
+    
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
+    
     <link href="css/mdb.min.css" rel="stylesheet">
-    <!-- Your custom styles (optional) -->
+    
     <link href="css/style.css" rel="stylesheet">
-    <!-- Font Awesome -->
+    
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
 
 <body>
 
-    <!-- Start your project here-->
-    <!--Main Navigation-->
+    <!-- Cabeçalho-->
     <header>
 
-        <!--Navbar-->
+        <!--Barra superior-->
         <nav class="navbar navbar-expand-lg navbar-dark #e53935 red darken-1 scrolling-navbar">
-
+            <!-- Botão para esconder a barra lateral -->
             <ul class="navbar-nav nav-flex-icons">
                 <li class="nav-item">
                     <a onclick="apertar_botao()"  class="nav-link">
@@ -45,30 +44,30 @@
                 </li>
             </ul>
 
-            <!-- Navbar brand -->
+            <!-- Logo -->
             <a class="navbar-brand" href="#">
                 <img src="img/logo/logo-full-transparent.png" height="30" alt="">
             </a>
 
-            <!-- Collapse button -->
+            <!-- Responsividade da barra superior -->
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="fas fa-search"></span>
             </button>
 
-            <!-- Collapsible content -->
+            <!-- Parte a ser escondida com a responsividade -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                <!-- Search form -->
+                <!-- Barra de pesquisa -->
                 <form class="form-inline mx-5" style="width: 100%;">
                     <i class="fas fa-search prefix"></i>
                     <input class="form-control" style="width: 95%;" type="text" placeholder="Pesquisar" aria-label="Search">
                 </form>
 
             </div>
-            <!-- Collapsible content -->
+            <!-- Parte a ser escondida com a responsividade -->
 
-            <!-- Links -->
+            <!-- Ícones -->
             <ul class="navbar-nav nav-flex-icons">
 
                 <li class="nav-item">
@@ -82,7 +81,7 @@
                     </a>
                 </li>
 
-                <!-- Dropdown -->
+                
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-user fa-lg"></i>
@@ -94,18 +93,18 @@
                 </li>
 
             </ul>
-            <!-- Links -->
+            <!-- Ícones -->
 
         </nav>
-        <!--/.Navbar-->
+        <!--/.Barra Superior-->
 
     </header>
-    <!--Main Navigation-->
+    
 
-    <!--Main layout-->
+    <!--Corpo do documento-->
     <main>
 
-        <!--Main container-->
+        <!--Barra Lateral e Corpo do Documento-->
         <div class="container-fluid">
             <div class="row" id="pagina">
                 <nav class="col-md-2 d-none d-md-block bg-light navbar navbar-light blue-grey lighten-5" id="barralateral">
@@ -169,94 +168,90 @@
                         </ul>
                     </div>
                 </nav>
-                <div class="col-md-10" id="pagina_real">
+                <div class="col-md-10" id="pagina_real"> <!-- Corpo do documento -->
                     <div class="row mt-4 mx-2">
                         <div class="col-md-4">
-                            <!--Card-->
+                            
                             <div class="card">
                             
-                                <!--Card image-->
+                                
                                 <img class="img-fluid" src="images/img01.jpeg" alt="Card image cap">
                             
-                                <!--Card content-->
+                                
                                 <div class="card-body">
-                                    <!--Title-->
+                                    
                                     <h4 class="card-title">Card title</h4>
-                                    <!--Text-->
+                                    
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                     <a href="#" class="btn btn-primary">Button</a>
                                 </div>
                             
                             </div>
-                            <!--/.Card-->
+                            
                         </div>
                         <div class="col-md-4">
-                            <!--Card-->
+                            
                             <div class="card">
                             
-                                <!--Card image-->
+                                
                                 <img class="img-fluid" src="images/img02.jpeg" alt="Card image cap">
                             
-                                <!--Card content-->
+                                
                                 <div class="card-body">
-                                    <!--Title-->
+                                    
                                     <h4 class="card-title">Card title</h4>
-                                    <!--Text-->
+                                    
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                     <a href="#" class="btn btn-primary">Button</a>
                                 </div>
                             
                             </div>
-                            <!--/.Card-->
+                            
                         </div>
                         <div class="col-md-4">
-                            <!--Card-->
+                            
                             <div class="card">
                             
-                                <!--Card image-->
+                                
                                 <img class="img-fluid" src="images/img03.jpeg" alt="Card image cap">
                             
-                                <!--Card content-->
+                                
                                 <div class="card-body">
-                                    <!--Title-->
+                                    
                                     <h4 class="card-title">Card title</h4>
-                                    <!--Text-->
+                                    
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                     <a href="#" class="btn btn-primary">Button</a>
                                 </div>
                             
                             </div>
-                            <!--/.Card-->
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!--Main container-->
+        
 
     </main>
-    <!--Main layout-->
+    
 
-    <!--Footer-->
+    
     <footer>
 
     </footer>
-    <!--Footer-->
-    <!-- /Start your project here-->
-
-    <!-- SCRIPTS -->
-    <!-- JQuery -->
+    
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap tooltips -->
+    
     <script type="text/javascript" src="js/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
+    
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
+    
     <script type="text/javascript" src="js/mdb.min.js"></script>
 
     <script src="js/comutar_barra.js"></script>
     <script>
-        document.querySelector("#stats").href="stats.php?id="+<?php echo $id ?>
+        document.querySelector("#stats").href="stats.php?id="+<?php echo $id ?> //Alterando o link das estatísticas para usar o id do usuário em questão
     </script>
 </body>
 

@@ -15,20 +15,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>SF - Login</title>
-    <!-- Font Awesome -->
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Bootstrap core CSS -->
+    
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
+    
     <link href="css/mdb.min.css" rel="stylesheet">
-    <!-- Your custom styles (optional) -->
+    
     <link href="css/style.css" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
 
 <body class="bg-login">
 
-    <!--Main layout-->
+    
     <main>
     
     
@@ -74,14 +74,14 @@
             </div>
         </div>
     </main>
-    <!--Main layout-->
+    
 
-    <!-- Central Modal Medium Info -->
+    <!-- Recuperação de cadastro -->
     <div class="modal fade" id="centralModalInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-notify modal-info" role="document">
-            <!--Content-->
+            
             <div class="modal-content">
-                <!--Header-->
+               
                 <div class="modal-header">
                     <p class="heading lead">Recuperação de cadastro</p>
     
@@ -90,7 +90,7 @@
                     </button>
                 </div>
     
-                <!--Body-->
+                
                 <div class="modal-body">
                     <div class="text-center">
                         <i class="fa fa-times fa-4x mb-3 animated rotateIn"></i>
@@ -98,32 +98,32 @@
                     </div>
                 </div>
     
-                <!--Footer-->
+                
                 <div class="modal-footer justify-content-center">
                     <a type="button" class="btn btn-outline-secondary-modal waves-effect" data-dismiss="modal"><i class="fas fa-times mr-3"></i>Fechar</a>
                 </div>
             </div>
-            <!--/.Content-->
+            
         </div>
     </div>
-    <!-- Central Modal Medium Info-->
+    
 
-    <!--Footer-->
+    
     <footer>
 
     </footer>
-    <!--Footer-->
-    <!-- /Start your project here-->
+    
+    
 
 
-    <!-- SCRIPTS -->
-    <!-- JQuery -->
+    
+    
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap tooltips -->
+    
     <script type="text/javascript" src="js/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
+    
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
+    
     <script type="text/javascript" src="js/mdb.min.js"></script>
 
 
@@ -138,13 +138,13 @@
         $senha = $_POST['senha'];
         $auth_success = false;
     
-        if (empty($email) || empty($senha)) {
+        if (empty($email) || empty($senha)) { //Função do alerta
             echo "<script> document.querySelector('#alert-login').innerHTML = '<div class=\"alert alert-danger alert-dismissible fade show my-3\" role=\"alert\"><strong>Ops!</strong> Você precisa preencher todos os campos.<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div>' </script>";
         } else {
             $sql = 'SELECT * FROM Usuario';
             $row = $conn->query($sql);
         
-            foreach ($conn->query($sql) as $row) {
+            foreach ($conn->query($sql) as $row) { //Verifica a existência no banco de dados
                 if ($row['email'] == $email && $senha == $row['senha']) {
                     $_SESSION['nome'] = $row['nome'];
                     $_SESSION['email'] = $row['email'];
@@ -152,16 +152,16 @@
                     $_SESSION['id'] = $row['id'];
         
                     $auth_success = true;
-                    //header('Location: index.php');
+                    
                     echo "<script> window.location = \"index.php\" </script>";
                     break;
                 }
             }
         
             if (!$auth_success) {
-                //echo "<script> alert('Usuário ou senha inválido(s)!'); window.location.href = '../login.html'</script>";
+                
                 echo "<script> document.querySelector('#alert-login').innerHTML = '<div class=\"alert alert-danger alert-dismissible fade show my-3\" role=\"alert\"><strong>Ops!</strong> Usuário ou senha inválidos.<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button></div>' </script>";
-                //header('Location: ../login.html');
+                
             }
         }
     }

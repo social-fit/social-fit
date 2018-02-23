@@ -17,20 +17,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>SF - Cadastro</title>
-    <!-- Font Awesome -->
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Bootstrap core CSS -->
+    
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
+    
     <link href="css/mdb.min.css" rel="stylesheet">
-    <!-- Your custom styles (optional) -->
+    
     <link href="css/style.css" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
 
 <body class="bg-login">
 
-    <!--Main layout-->
+    
     <main>
         <div class="card mx-auto my-5" style="width: 55%;">
             <div class="card-body">
@@ -48,7 +48,7 @@
                     <div id="alert-cadastro" class="mb-4 mt-0">
                         <!-- Exibe um alerta, caso seja necessário -->
                     </div>
-
+                    <!-- Permite inserir dados do usuário -->
                     <div class="md-form">
                         <i class="fa fa-user prefix grey-text"></i>
                         <input type="text" id="input-nome" class="form-control" name="nome">
@@ -90,14 +90,14 @@
             </div>
         </div>
     </main>
-    <!--Main layout-->
+    
 
-    <!-- Central Modal Medium Info -->
+    <!-- Termos e condições -->
     <div class="modal fade" id="centralModalInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-notify modal-info" role="document">
-            <!--Content-->
+            
             <div class="modal-content">
-                <!--Header-->
+                
                 <div class="modal-header">
                     <p class="heading lead">Termos e Condições</p>
     
@@ -106,7 +106,7 @@
                     </button>
                 </div>
     
-                <!--Body-->
+                
                 <div class="modal-body">
                     <div class="text-center">
                         <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
@@ -114,23 +114,23 @@
                     </div>
                 </div>
     
-                <!--Footer-->
+                
                 <div class="modal-footer justify-content-center">
                     <a type="button" class="btn btn-primary-modal"><i class="fas fa-check mr-3"></i>Aceito</a>
                     <a type="button" class="btn btn-outline-secondary-modal waves-effect" data-dismiss="modal"><i class="fas fa-times mr-3"></i>Não aceito</a>
                 </div>
             </div>
-            <!--/.Content-->
+            
         </div>
     </div>
-    <!-- Central Modal Medium Info-->
+    
 
-    <!--Footer-->
+    
     <footer>    
     
     </footer>
-    <!--Footer-->
-    <!-- /Start your project here-->
+    
+    
 
     <?php
         if (isset($_POST['btn-cadastro'])) {
@@ -172,14 +172,14 @@
         }
     ?>
 
-    <!-- SCRIPTS -->
-    <!-- JQuery -->
+    
+    
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap tooltips -->
+    
     <script type="text/javascript" src="js/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
+    
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
+    
     <script type="text/javascript" src="js/mdb.min.js"></script>
 </body>
 

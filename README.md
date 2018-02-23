@@ -21,7 +21,12 @@ Além disso, pode-se elencar as seguintes inspirações:
 * Observou-se um forte interesse de compartilhar e comparar o desempenho com outras pessoas, além de tomar o conhecimento de eventos de crossfit, os quais são bastante valorizados pelos envolvidos nessas atividades;
 * Avalia-se a possibilidade de integrar dispositivos vestíveis (wearables) para obter dados das atividades realizadas pelos usuários, a fim de alimentar os dados do sistema.
 
-## Protótipos
+<!-- ## Protótipos -->
+
+
+## Requisitos mínimos e instalação
+
+Para utilização do SocialFIT é necessário a criação de um servidor *web*. Isto pode ser feito instalando o servidor LAMP que no Ubuntu e Linux Mint pode ser feito através do comando:
 
 
 

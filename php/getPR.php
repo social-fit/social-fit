@@ -4,7 +4,7 @@
 
   $id = $_SESSION['id'];
 
-  $burpee = (int) $_GET['burpee'] ?? null;
+  $burpee = (int) $_GET['burpee'] ?? null; //Obtem os dados das caixas de texto.
   $air_squat = (int) $_GET['air_squat'] ?? null;
   $front_squat = (int) $_GET['front_squat'] ?? null;
   $back_squat = (int) $_GET['back_squat'] ?? null;
@@ -44,52 +44,52 @@
       if ($burpee != null) {
         $sql = "UPDATE Dados, Usuario SET burpee = '$burpee' WHERE Usuario.id = Dados.usuario_id and usuario_id = '$id_today' and dia = '$hoje'";
         $row = $conn->query($sql);
-        //echo"<script> alert('Dados atualizados com sucesso!'); window.location.href='../personal-records.php'</script>";
+        
       }
       if ($air_squat != null) {
         $sql = "UPDATE Dados, Usuario SET air_squat = '$air_squat' WHERE Usuario.id = Dados.usuario_id and usuario_id = '$id_today' and dia = '$hoje'";
         $row = $conn->query($sql);
-        //echo"<script> alert('Dados atualizados com sucesso!'); window.location.href='../personal-records.php'</script>";
+        
       }
       if ($front_squat != null) {
         $sql = "UPDATE Dados, Usuario SET front_squat = '$front_squat' WHERE Usuario.id = Dados.usuario_id and usuario_id = '$id_today' and dia = '$hoje'";
         $row = $conn->query($sql);
-        //echo"<script> alert('Dados atualizados com sucesso!'); window.location.href='../personal-records.php'</script>";
+        
       }
       if ($back_squat != null) {
         $sql = "UPDATE Dados, Usuario SET back_squat = '$back_squat' WHERE Usuario.id = Dados.usuario_id and usuario_id = '$id_today' and dia = '$hoje'";
         $row = $conn->query($sql);
-        //echo"<script> alert('Dados atualizados com sucesso!'); window.location.href='../personal-records.php'</script>";
+        
       }
       if ($overhead_squat != null) {
         $sql = "UPDATE Dados, Usuario SET overhead_squat = '$overhead_squat' WHERE Usuario.id = Dados.usuario_id and usuario_id = '$id_today' and dia = '$hoje'";
         $row = $conn->query($sql);
-        //echo"<script> alert('Dados atualizados com sucesso!'); window.location.href='../personal-records.php'</script>";
+        
       }
       if ($shoulder_press != null) {
         $sql = "UPDATE Dados, Usuario SET shoulder_press = '$shoulder_press' WHERE Usuario.id = Dados.usuario_id and usuario_id = '$id_today' and dia = '$hoje'";
         $row = $conn->query($sql);
-        //echo"<script> alert('Dados atualizados com sucesso!'); window.location.href='../personal-records.php'</script>";
+        
       }
       if ($push_press != null) {
         $sql = "UPDATE Dados, Usuario SET push_press = '$push_press' WHERE Usuario.id = Dados.usuario_id and usuario_id = '$id_today' and dia = '$hoje'";
         $row = $conn->query($sql);
-        //echo"<script> alert('Dados atualizados com sucesso!'); window.location.href='../personal-records.php'</script>";
+        
       }
       if ($push_jerk != null) {
         $sql = "UPDATE Dados, Usuario SET push_jerk = '$push_jerk' WHERE Usuario.id = Dados.usuario_id and usuario_id = '$id_today' and dia = '$hoje'";
         $row = $conn->query($sql);
-        //echo"<script> alert('Dados atualizados com sucesso!'); window.location.href='../personal-records.php'</script>";
+        
       }
       if ($deadlift != null) {
         $sql = "UPDATE Dados, Usuario SET deadlift = '$deadlift' WHERE Usuario.id = Dados.usuario_id and usuario_id = '$id_today' and dia = '$hoje'";
         $row = $conn->query($sql);
-        //echo"<script> alert('Dados atualizados com sucesso!'); window.location.href='../personal-records.php'</script>";
+        
       }
       if ($pull_up != null) {
         $sql = "UPDATE Dados, Usuario SET pull_up = '$pull_up' WHERE Usuario.id = Dados.usuario_id and usuario_id = '$id_today' and dia = '$hoje'";
         $row = $conn->query($sql);
-        //echo"<script> alert('Dados atualizados com sucesso!'); window.location.href='../personal-records.php'</script>";
+        
       }
     }
   } else {

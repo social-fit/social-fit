@@ -1,5 +1,5 @@
 <?php
-    /* Connect to a MySQL database using driver invocation */
+    /* Conecta a um banco de dados MySQL */
     $dsn = 'mysql:dbname=social_fit;host=127.0.0.1';
     $user = 'root';
     $password = 'wally';

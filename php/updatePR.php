@@ -9,7 +9,7 @@
 	$row = $conn->query($sql);
 
 	foreach ($conn->query($sql) as $row) {
-		//echo strtotime('today') . "\t" . strtotime($row['dia']) . "\t";
+		//Obtem os dados dos últimos 7 dias.
 		if (strtotime($row['dia']) >= strtotime('-7 days') && strtotime($row['dia']) <= strtotime('today')) {
 			$exer['burpee'][date('Y-m-d', strtotime($row['dia']))] = (int) $row['burpee'];
 			$exer['air-squat'][date('Y-m-d', strtotime($row['dia']))] = (int) $row['air_squat'];
@@ -24,8 +24,8 @@
 		}
 	}
 
-	//print_r($exer['burpee'][[date('Y-m-d', strtotime('today'))]]);
+	
 	echo json_encode($exer);
-	//echo json_encode($_POST['1']);
-	//echo json_encode($elench_press);
+	
+	
 ?>

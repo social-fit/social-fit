@@ -2,22 +2,22 @@
     require_once "php/database.php";
     session_start();
 
-    $id = $_SESSION['id'];
-    $id_req = $_GET['id'];
+    $id = $_SESSION['id']; //ID do Usuário logado
+    $id_req = $_GET['id']; //ID requisitado
 
-    if ($id == $id_req){
+    if ($id == $id_req){ //Verifica se o ID requisitado é o do usuário
         if (!isset($id)) {
             header('Location: login.php');
         }
     }
-    else{
+    else{ //Senão, verifica que o ID requisitado corresponde a um amigo do usuário
         $sql = "SELECT self_id, friend_id FROM Relacionamentos WHERE self_id = '$id' AND friend_id = '$id_req'";
         $row = $conn->query($sql);
         $contador = 0;
         foreach ($conn->query($sql) as $row) {
             $contador = $contador + 1;
         }
-        if($contador == 0){
+        if($contador == 0){ //Se não for, redireciona para a página de login.
             header('Location: login.php');
         }
     }
@@ -33,24 +33,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Estatísticas</title>
-    <!-- Font Awesome -->
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Bootstrap core CSS -->
+    
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
+    
     <link href="css/mdb.min.css" rel="stylesheet">
-    <!-- Your custom styles (optional) -->
+    
     <link href="css/style.css" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
 
 <body>
 
-    <!-- Start your project here-->
-    <!--Main Navigation-->
+    
+    
     <header>
     
-        <!--Navbar-->
+        
         <nav class="navbar navbar-expand-lg navbar-dark #e53935 red darken-1 scrolling-navbar">
 
             <ul class="navbar-nav nav-flex-icons">
@@ -61,28 +61,28 @@
                 </li>
             </ul>
 
-            <!-- Navbar brand -->
+            
             <a class="navbar-brand" href="#">
                 <img src="img/logo/logo-full-transparent.png" height="30" alt="">
             </a>
 
-            <!-- Collapse button -->
+            
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-search"></span></button>
 
-            <!-- Collapsible content -->
+            
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                <!-- Search form -->
+                
                 <form class="form-inline mx-5" style="width: 100%;">
                      <i class="fa fa-search prefix"></i>
                      <input class="form-control" style="width: 95%;" type="text" placeholder="Pesquisar" aria-label="Search">
                 </form>
 
             </div>
-            <!-- Collapsible content -->
+            
 
-            <!-- Links -->
+            
             <ul class="navbar-nav nav-flex-icons">
             
                 <li class="nav-item">
@@ -96,7 +96,7 @@
                     </a>
                 </li>
             
-                <!-- Dropdown -->
+                
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-user fa-lg"></i>
@@ -108,18 +108,18 @@
                 </li>
             
             </ul>
-            <!-- Links -->
+            
 
         </nav>
-        <!--/.Navbar-->
+        
                 
     </header>
-    <!--Main Navigation-->
+    
 
-    <!--Main layout-->
+    
     <main>
 
-        <!--Main container-->
+        
         <div class="container-fluid">
             <div class="row" id="pagina">
                 <nav class="col-md-2 d-none d-md-block bg-light navbar navbar-light blue-grey lighten-5" id="barralateral">
@@ -187,7 +187,7 @@
                 <div class="col-md-10" id="pagina_real">
                     <h1 class="mt-4">Estatísticas</h1>
                     
-                    <!--Grid row-->
+                    <!--Mostra os últimos 7 dias dos exercícios-->
                     <div class="row mt-4">
                     
                         <div class="col-6">
@@ -210,9 +210,9 @@
                             </div>
                         </div>
                     </div>
-                    <!--Grid row-->
+                    
 
-                    <!--Grid row-->
+                    
                     <div class="row mt-4">
                     
                         <div class="col-6">
@@ -236,9 +236,9 @@
                         </div>
         
                     </div>
-                    <!--Grid row-->
+                    
 
-                    <!--Grid row-->
+                    
                     <div class="row mt-4">
 
                         <div class="col-6">
@@ -262,9 +262,9 @@
                         </div>
                     
                     </div>
-                    <!--Grid row-->
+                    
 
-                    <!--Grid row-->
+                    
                     <div class="row mt-4">
                     
                         <div class="col-6">
@@ -288,9 +288,9 @@
                         </div>
                     
                     </div>
-                    <!--Grid row-->
+                    
 
-                    <!--Grid row-->
+                    
                     <div class="row mt-4">
                     
                         <div class="col-6">
@@ -313,36 +313,36 @@
                             </div>
                         </div>
                     </div>
-                    <!--Grid row-->
+                    
                 </div>
             </div>
         </div>
-        <!--Main container-->
+        
 
-        <!--Main container-->
+        
         <div class="container">     
         
         </div>
-        <!--Main container-->
+        
 
     </main>
-    <!--Main layout-->
+    
 
-    <!--Footer-->
+    
     <footer>
 
     </footer>
-    <!--Footer-->
-    <!-- /Start your project here-->
+    
+    
 
-    <!-- SCRIPTS -->
-    <!-- JQuery -->
+    
+    
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap tooltips -->
+    
     <script type="text/javascript" src="js/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
+    
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
+    
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
@@ -355,7 +355,7 @@
             data: {'id': "<?php echo $id_req ?>"}, 
             url: "php/updatePR.php",
             success: function (data) {
-                //console.log(data)
+                
                 data = JSON.parse(data)
                 
                 let cont = 0
@@ -392,44 +392,21 @@
 
         function createChart (ctx, dados) {
             var chart = new Chart(ctx, {
-                // The type of chart we want to create
+                
                 type: 'bar',
 
-                // The data for our dataset
+                
                 data: dados,
 
-                // Configuration options go here
+                
                 options: {
                     responsive: true,
-                    //maintainAspectRatio: false,
+                    
                 }
             });
         }
 
-        /*
-
-        var chart = new Chart(ctx2, {
-            // The type of chart we want to create
-            type: 'bar',
-
-            // The data for our dataset
-            data: {
-                labels: ["27/01/2018", "28/01/2018", "29/01/2018", "30/01/2018", "31/01/2018", "01/02/2018", "02/02/2018"],
-                datasets: [{
-                    label: "Clean (Power) - Últimos 7 dias",
-                    backgroundColor: 'rgba(229, 57, 53, 0.2)',
-                    borderColor: 'rgb(229, 57, 53)',
-                    borderWidth: 2,
-                    data: [4, 10, 5, 2, 20, 30, 45],
-                }]
-            },
-
-            // Configuration options go here
-            options: {
-                responsive: true,
-                //maintainAspectRatio: false,
-            }
-        });*/
+        
 
     </script>
     <script>

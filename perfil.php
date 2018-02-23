@@ -18,23 +18,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Perfil</title>
-    <!-- Bootstrap core CSS -->
+    
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
+    
     <link href="css/mdb.min.css" rel="stylesheet">
-    <!-- Your custom styles (optional) -->
+    
     <link href="css/style.css" rel="stylesheet">
-    <!-- Font Awesome -->
+    
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
 
 <body>
 
-    <!-- Start your project here-->
-    <!--Main Navigation-->
+    
+    
     <header>
 
-        <!--Navbar-->
+        
         <nav class="navbar navbar-expand-lg navbar-dark #e53935 red darken-1 scrolling-navbar">
 
             <ul class="navbar-nav nav-flex-icons">
@@ -45,30 +45,30 @@
                 </li>
             </ul>
 
-            <!-- Navbar brand -->
+            
             <a class="navbar-brand" href="#">
                 <img src="img/logo/logo-full-transparent.png" height="30" alt="">
             </a>
 
-            <!-- Collapse button -->
+            
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="fas fa-search"></span>
             </button>
 
-            <!-- Collapsible content -->
+            
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                <!-- Search form -->
+                
                 <form class="form-inline mx-5" style="width: 100%;">
                     <i class="fas fa-search prefix"></i>
                     <input class="form-control" style="width: 95%;" type="text" placeholder="Pesquisar" aria-label="Search">
                 </form>
 
             </div>
-            <!-- Collapsible content -->
+            
 
-            <!-- Links -->
+            
             <ul class="navbar-nav nav-flex-icons">
 
                 <li class="nav-item">
@@ -82,7 +82,7 @@
                     </a>
                 </li>
 
-                <!-- Dropdown -->
+                
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-user fa-lg"></i>
@@ -94,18 +94,18 @@
                 </li>
 
             </ul>
-            <!-- Links -->
+            
 
         </nav>
-        <!--/.Navbar-->
+        
 
     </header>
-    <!--Main Navigation-->
+    
 
-    <!--Main layout-->
+    
     <main>
 
-        <!--Main container-->
+        
         <div class="container-fluid">
             <div class="row" id="pagina">
                 <nav class="col-md-2 d-none d-md-block bg-light navbar navbar-light blue-grey lighten-5" id="barralateral">
@@ -179,37 +179,37 @@
 
                         <div class="row mt-4 mx-2">
                             <div class="col-md-12">
-                                <!--Card-->
+                                
                                 <div class="card">
                                 
-                                    <!--Card image-->
+                                    
                                     <img style="max-height: 200px;" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg" alt="Card image cap">
                                 
-                                    <!--Card content-->
+                                    
                                     <div class="card-body text-center">
-                                        <!--Title-->
+                                        <!--Nome do usuário-->
                                         <h4 class="card-title" id="nome"></h4>
-                                        <!--Text-->
-                                        <p class="card-text">85 seguidores</p>
+                                        
+                                        
 
                                         <a href="amigos.php" class="btn btn-danger">Ver Contatos</a>
                                     </div>
                                 
                                 </div>
-                                <!--/.Card-->
+                                
                             </div>
                         </div>
 
                         <div class="row my-4 mx-2">
                             <div class="col-md-4">
-                                <!--Card-->
+                                
                                 <div class="card">
                                 
                                     
                                 
-                                    <!--Card content-->
+                                    
                                     <div class="card-body">
-                                        <!--Title-->
+                                        
                                         <div class="row">
                                             <div class="col-md-10">
                                                 <h4 class="card-title">Dados de contato</h4>
@@ -226,7 +226,7 @@
                                         
                     
 
-                                        <!--Text-->
+                                        <!--E-mail do usuário -->
                 
                                         <div class="md-form">
                                             <i class="fas fa-envelope prefix grey-text"></i>
@@ -236,17 +236,17 @@
                                     </div>
                                 
                                 </div>
-                                <!--/.Card-->
+                                
                             </div>
                             <div class="col-md-4">
-                                <!--Card-->
+                                
                                 <div class="card">
                                 
                                     
                                 
-                                    <!--Card content-->
+                                    <!--Data de Nascimento-->
                                     <div class="card-body">
-                                        <!--Title-->
+                                        
                                         <div class="row">
                                             <div class="col-md-10">
                                                 <h4 class="card-title">Data de Nascimento</h4>
@@ -267,17 +267,17 @@
                                     </div>
                                 
                                 </div>
-                                <!--/.Card-->
+                                
                             </div>
                             <div class="col-md-4">
-                                <!--Card-->
+                                
                                 <div class="card">
                                 
                                     
                                 
-                                    <!--Card content-->
+                                    <!--País-->
                                     <div class="card-body">
-                                        <!--Title-->
+                                        
                                         <div class="row">
                                             <div class="col-md-10">
                                                 <h4 class="card-title">País</h4>
@@ -289,7 +289,7 @@
                                             </div>
                                 
                                         </div>
-                                        <!--Text-->
+                                        
                                         <div class="md-form">
                                             <i class="fas fa-map-marker-alt prefix grey-text"></i>
                                             <input type="text" id="pais" class="form-control" disabled>
@@ -298,7 +298,7 @@
                                     </div>
                                 
                                 </div>
-                                <!--/.Card-->
+                                
                             </div>
                         </div>
                     </div>   
@@ -306,32 +306,32 @@
                 </div>
             </div>
         </div>
-        <!--Main container-->
+        
 
     </main>
-    <!--Main layout-->
+    
 
-    <!--Footer-->
+    
     <footer>
 
     </footer>
-    <!--Footer-->
-    <!-- /Start your project here-->
+    
+    
 
-    <!-- SCRIPTS -->
-    <!-- JQuery -->
+    
+    
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap tooltips -->
+    
     <script type="text/javascript" src="js/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
+    
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
+    
     <script type="text/javascript" src="js/mdb.min.js"></script>
 
     <script src="js/comutar_barra.js"></script>
 
     <script>
-        $.ajax({
+        $.ajax({ //Busca de dados no banco de dados e inserção dos dados
             method: "POST",
             data: {'id': "<?php echo $id ?>"},
             url: "php/loadProfile.php",
